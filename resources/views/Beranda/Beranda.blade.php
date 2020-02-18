@@ -1,4 +1,4 @@
-{{-- @extends('master') --}}
+@extends('MasterLayout')
 @section('Title')
     <title>
         GadaMaxima - Beranda
