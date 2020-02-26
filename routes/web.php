@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('Beranda/Beranda');
 });
+Route::get('/Outsourcing/Request', function () {
+    return view('Outsourcing/Request');
+});
+Route::get('/Outsourcing/Account', function () {
+    return view('Outsourcing/Account');
+});
+Route::get('/Outsourcing/ListofCustomer', function (){
+    return view('/Outsourcing/ListofCustomer');
+});
+Route::get('/Outsourcing/Bills', function (){
+    return view('/Outsourcing/Bills');
+});
