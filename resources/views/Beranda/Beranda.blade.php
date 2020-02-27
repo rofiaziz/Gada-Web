@@ -1,4 +1,4 @@
-@extends('MasterLayout')
+@extends('/Layouts/MasterLayouts')
 @section('Title')
     <title>
         GadaMaxima - Beranda
@@ -7,13 +7,7 @@
 
 {{-- Halaman Isi --}}
 @section('layout')
-<div class="col-md-12">
-    <div class="overview-wrap">
-        <h2 class="title-1">overview</h2>
-        <button class="au-btn au-btn-icon au-btn--blue">
-            <i class="zmdi zmdi-plus"></i>add item</button>
-    </div>
-</div>
+
 <div class="row m-t-25">
     <div class="col-sm-6 col-lg-3">
         <div class="overview-item overview-item--c1">
@@ -76,5 +70,19 @@
         </div>
     </div>
 </div>
+{{-- Bagian Selamat Datang --}}
+
+        <div class="overview-item overview-item--c6" style="background-color:white">
+            <div class="overview__inner">
+                <div class="overview-box clearfix">
+                    <div class="text" style="height: 300px; " >
+                    <h1 >Selamat Datang di Halaman Admin</h1>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+
+  {{-- End Bagian Selamat Datang --}}
 @endsection
 {{-- End Halaman Isi --}}
