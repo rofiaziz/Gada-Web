@@ -1647,6 +1647,9 @@ section {
 .navbar-sidebar .navbar__list li.active > a {
     color: #4272d7;
 }
+#nav li.active a{
+    color: #4272d7;
+}
 
 .has-sub {
     position: relative;
@@ -4455,6 +4458,9 @@ section {
 .role.member {
     background: #57b846;
 }
+.role.cabang{
+    background: #5050a3;
+}
 
 .table-top-campaign.table td {
     border-top: none;
@@ -4661,12 +4667,18 @@ section {
     padding: 0 14px;
 }
 
-.status--process {
+.status--active {
     color: #00ad5f;
 }
 
-.status--denied {
-    color: #fa4251;
+.status--warning {
+    color: #d4ca3d;
+}
+.status--pending{
+    color: #767685
+}
+.status--blocked{
+    color: #db0d36
 }
 
 .table-data3 thead {
