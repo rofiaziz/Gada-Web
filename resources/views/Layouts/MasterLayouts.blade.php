@@ -9,8 +9,7 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
-    <!-- Title Page-->
-    @yield('Title')
+    
 
     <!-- Fontfaces CSS-->
     <link href="{{URL::asset('css/font-face.css')}}" rel="stylesheet" media="all">
@@ -33,16 +32,14 @@
     <!-- Main CSS-->
     <link href="{{URL::asset('css/theme.css')}}" rel="stylesheet" media="all">
     
-<<<<<<< HEAD
     
    
-=======
-    <!--Judul-->
+  <!-- Title Page-->
+  @yield('Title')
 
     {{-- Extra Font --}}
     @yield('ExtraFont')
    {{-- Extra Font --}}
->>>>>>> adb0d42aad85947865d87204e34420194f13826f
 
 </head>
 
@@ -74,28 +71,41 @@
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-chart-bar"></i>Outsourching</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="index.html">Beranda 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Beranda 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Beranda 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Beranda 4</a>
-                                </li>
-                            </ul>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Outsourcing/Request">Permintaan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Account">Akun</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/ListofCustomer">Daftar Pelanggan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Bills">Tagihan</a>
+                                    </li>
+                                </ul>
                         </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Outsourching</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="fas fa-table"></i>Satpam</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Satpam/RequestSatpam">Permintaan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Account">Akun</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/ListofCustomer">Daftar Satpam</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Bills">Tracking</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Bills">Deployment</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
                             <a href="form.html">
@@ -204,14 +214,29 @@
                                     </li>
                                 </ul>
                             </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Outsourching</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
+                       
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="fas fa-table"></i>Satpam</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Satpam/RequestSatpam">Permintaan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Satpam/AccountSatpam">Akun</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Satpam/ListofSatpam">Daftar Satpam</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Outsourcing/Bills">Tracking</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Satpam/DeploymentSatpam">Deployment</a>
+                                    </li>
+                                </ul>
                         </li>
+                    
                         <li>
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Pesan</a>

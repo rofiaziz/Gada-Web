@@ -1,71 +1,77 @@
 @extends('/Layouts/MasterLayouts')
-
 @section('Title')
-    <title>GadaMaxima - Akun Pelanggan</title>
-@endsection
+    <title>
+        GadaMaxima - Permintaan Konfirmasi Satpam
+    </title>
+@endsection 
 
-@section('ExtraFont')
-<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">  
-@endsection
 @section('layout')
-<div class="row">
-    <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
-        <!-- DATA TABLE -->
-        <h3 class="title-5 m-b-35" style="font-family: 'Abril Fatface'; font-size:45px;margin-left:12px; margin-top:12px">Akun Pelanggan</h3>
-        <div class="table-data__tool">
-            <div class="table-data__tool-right">
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
-                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                    <select class="js-select2" name="type">
-                        <option selected="selected">Export</option>
-                        <option value="">Option 1</option>
-                        <option value="">Option 2</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
+<div class="user-data m-b-30">
+        <h3 class="title-3 m-b-30">
+            <i class="zmdi zmdi-account-calendar"></i>Daftar Permintaan Akun Satpam</h3>
+        <div class="filters m-b-45">
+            <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+                <select class="js-select2" name="property">
+                    <option selected="selected">All Properties</option>
+                    <option value="">Products</option>
+                    <option value="">Services</option>
+                </select>
+                <div class="dropDownSelect2"></div>
+            </div>
+            <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+                <select class="js-select2 au-select-dark" name="time">
+                    <option selected="selected">All Time</option>
+                    <option value="">By Month</option>
+                    <option value="">By Day</option>
+                </select>
+                <div class="dropDownSelect2"></div>
             </div>
         </div>
-        <div class="table-responsive table-responsive-data2">
-            <table class="table table-data2">
+        <div class="table-responsive table-data">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>
+                        <td>
                             <label class="au-checkbox">
                                 <input type="checkbox">
                                 <span class="au-checkmark"></span>
                             </label>
-                        </th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Perusahaan</th>
-                        <th>Level</th>
-                        <th>Status</th>
-                        <th></th>
+                        </td>
+                        <td>Nama</td>
+                        <td>Strata</td>
+                        <td>Alamat</td>
+                        <td>Status</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tr-shadow">
+                    {{-- LOOP START --}}
+                    <tr>
                         <td>
                             <label class="au-checkbox">
                                 <input type="checkbox">
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>Lori Lynch</td>
                         <td>
-                            <span class="block-email">lori@example.com</span>
+                            <div class="table-data__info">
+                                <h6>lori lynch</h6>
+                                <span>
+                                    <a href="#">johndoe@gmail.com</a>
+                                </span>
+                            </div>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td>
                         <td>
-                            <span class="status--active">Aktif</span>
+                           100
+                        </td>
+                        <td>
+                            Jl. tanpa Nama
+                        </td>
+                        <td>
+                            <span class="role admin">Belum Aktif</span>
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
@@ -78,28 +84,32 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
+                    <tr>
                         <td>
                             <label class="au-checkbox">
                                 <input type="checkbox">
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>Lori Lynch</td>
                         <td>
-                            <span class="block-email">john@example.com</span>
+                            <div class="table-data__info">
+                                <h6>lori lynch</h6>
+                                <span>
+                                    <a href="#">johndoe@gmail.com</a>
+                                </span>
+                            </div>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
                         <td>
-                            <span class="status--active">Aktif</span>
+                           100
+                        </td>
+                        <td>
+                            Jl. tanpa Nama
+                        </td>
+                        <td>
+                            <span class="role admin">Belum Aktif</span>
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
@@ -112,28 +122,32 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
+                    <tr>
                         <td>
                             <label class="au-checkbox">
                                 <input type="checkbox">
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>Lori Lynch</td>
                         <td>
-                            <span class="block-email">lyn@example.com</span>
+                            <div class="table-data__info">
+                                <h6>lori lynch</h6>
+                                <span>
+                                    <a href="#">johndoe@gmail.com</a>
+                                </span>
+                            </div>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
                         <td>
-                            <span class="status--warning">Suspend</span>
+                           100
+                        </td>
+                        <td>
+                            Jl. tanpa Nama
+                        </td>
+                        <td>
+                            <span class="role admin">Belum Aktif</span>
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
@@ -146,28 +160,32 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
+                    <tr>
                         <td>
                             <label class="au-checkbox">
                                 <input type="checkbox">
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>Lori Lynch</td>
                         <td>
-                            <span class="block-email">doe@example.com</span>
+                            <div class="table-data__info">
+                                <h6>lori lynch</h6>
+                                <span>
+                                    <a href="#">johndoe@gmail.com</a>
+                                </span>
+                            </div>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
                         <td>
-                            <span class="status--pending">belum di konfirmasi</span>
+                           100
+                        </td>
+                        <td>
+                            Jl. tanpa Nama
+                        </td>
+                        <td>
+                            <a href="/"><span class="role admin">Belum Aktif</span></a>
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
@@ -183,7 +201,8 @@
                 </tbody>
             </table>
         </div>
-        <!-- END DATA TABLE -->
-</div>
-</div>
+        <div class="user-data__footer">
+            <button class="au-btn au-btn-load">lihat Lebih</button>
+        </div>
+    </div>
 @endsection

@@ -4,7 +4,7 @@
     <title>GadaMaxima - Daftar Pelanggan</title>
 @endsection
 @section('ExtraFont')
-<link href="<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet"> " rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 @endsection
 @section('layout')
 <div class="row">

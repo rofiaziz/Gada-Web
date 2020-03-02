@@ -1,7 +1,7 @@
 @extends('/Layouts/MasterLayouts')
 
 @section('Title')
-    <title>GadaMaxima - Akun Pelanggan</title>
+    <title>GadaMaxima - Akun Satpam</title>
 @endsection
 
 @section('ExtraFont')
@@ -11,11 +11,11 @@
 <div class="row">
     <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
         <!-- DATA TABLE -->
-        <h3 class="title-5 m-b-35" style="font-family: 'Abril Fatface'; font-size:45px;margin-left:12px; margin-top:12px">Akun Pelanggan</h3>
+        <h3 class="title-5 m-b-35" style="font-family: 'Abril Fatface'; font-size:45px;margin-left:12px; margin-top:12px">Akun Satpam</h3>
         <div class="table-data__tool">
             <div class="table-data__tool-right">
                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
+                    <i class="zmdi zmdi-plus"></i>nambah satpam</button>
                 <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                     <select class="js-select2" name="type">
                         <option selected="selected">Export</option>
@@ -38,8 +38,7 @@
                         </th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Perusahaan</th>
-                        <th>Level</th>
+                        <th>Strata</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -56,8 +55,8 @@
                         <td>
                             <span class="block-email">lori@example.com</span>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td>
+                        
+                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td>
                         <td>
                             <span class="status--active">Aktif</span>
                         </td>
@@ -90,8 +89,8 @@
                         <td>
                             <span class="block-email">john@example.com</span>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
+                       
+                        <td><span class="role admin">Newbie</span></td>
                         <td>
                             <span class="status--active">Aktif</span>
                         </td>
@@ -124,8 +123,8 @@
                         <td>
                             <span class="block-email">lyn@example.com</span>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
+                       
+                        <td><span class="role admin">Newbie</span></td>
                         <td>
                             <span class="status--warning">Suspend</span>
                         </td>
@@ -158,8 +157,8 @@
                         <td>
                             <span class="block-email">doe@example.com</span>
                         </td>
-                        <td class="desc">RE:</td>
-                        <td><span class="role admin">admin</span></td>
+                       
+                        <td><span class="role admin">Newbie</span></td>
                         <td>
                             <span class="status--pending">belum di konfirmasi</span>
                         </td>
