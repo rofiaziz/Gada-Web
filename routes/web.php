@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('Beranda/Beranda');
 });
+//Outsourcing
 Route::get('/Outsourcing/Request', function () {
     return view('Outsourcing/Request');
 });
@@ -39,4 +40,9 @@ Route::get('/Satpam/ListofSatpam', function (){
 });
 Route::get('/Satpam/DeploymentSatpam', function (){
     return view('Satpam/DeploymentSatpam');
+});
+
+//Message
+Route::get('/Message/Inbox', function(){
+    return view('Message/Inbox');
 });

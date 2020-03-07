@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="{{URL::asset('images/icon/logo.png')}}" alt="CoolAdmin" />
+                            <img src="{{URL::asset('images/icon/logo-mobile.png')}}" alt="CoolAdmin" style="max-width:150px" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -107,9 +107,20 @@
                                     </li>
                                 </ul>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Pesan</a>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-table"></i>Pesan</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Message/Write">Tulis Pesan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Inbox">Pesan Masuk</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Outbox">Pesan Keluar</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
                             <a href="Klien.html">
@@ -229,7 +240,7 @@
                                         <a href="/Satpam/ListofSatpam">Daftar Satpam</a>
                                     </li>
                                     <li>
-                                        <a href="/Outsourcing/Bills">Tracking</a>
+                                        <a href="/Satpam/Tracking">Tracking</a>
                                     </li>
                                     <li>
                                         <a href="/Satpam/DeploymentSatpam">Deployment</a>
@@ -237,9 +248,20 @@
                                 </ul>
                         </li>
                     
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Pesan</a>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-envelope"></i>Pesan</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Message/Write">Tulis Pesan</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Inbox">Pesan Masuk</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Outbox">Pesan Keluar</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
                             <a href="Klien.html">
@@ -456,7 +478,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -465,7 +487,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
