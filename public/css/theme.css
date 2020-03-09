@@ -286,6 +286,18 @@ section {
     padding-bottom: 12vh;
 }
 }
+
+.page-wrapper2 {
+    overflow: auto;
+    /* padding-bottom: 8vh; */
+}
+
+@media (max-width: 991px) {
+    .page-wrapper2 {
+    overflow: auto;
+    /* padding-bottom: 12vh; */
+}
+}
 .page-container {
     background: #e5e5e5;
     padding-left: 300px;
@@ -335,11 +347,22 @@ section {
     background: #e5e5e5;
     height: 100vh;
 }
-
+.page-content--bge5-login {
+    background-image:linear-gradient(to top right,rgba(36, 15, 223, 0.644),rgb(4, 124, 252,.5));
+    background-size: cover;
+    height: 110vh;
+}
+.page-content--bge5-register {
+    background-image:linear-gradient(to top right,rgba(36, 15, 223, 0.644),rgb(4, 124, 252,.5));
+    background-size: cover;
+    height: 120vh;
+}
 .login-wrap {
     max-width: 540px;
     padding-top: 8vh;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-bottom: 8vh; */
 }
 
 .login-logo {
@@ -389,7 +412,7 @@ section {
     padding: 30px 30px 20px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    border-radius: 2px;
+    border-radius: 15px;
 }
 
 .social-login-content {

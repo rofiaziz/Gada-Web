@@ -46,3 +46,14 @@ Route::get('/Satpam/DeploymentSatpam', function (){
 Route::get('/Message/Inbox', function(){
     return view('Message/Inbox');
 });
+
+// Login & Register
+Route::get('/Login',function(){
+    return view('Login-Register/Login');
+});
+Route::get('/Register',function(){
+    return view('Login-Register/Register');
+});
+Route::get('/Forgot-passwd',function(){
+    return view('Login-Register/Forgot-Password');
+});

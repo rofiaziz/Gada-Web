@@ -9,8 +9,9 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{{URL::asset('images/icon/logo-mini.png')}}">
     
-
     <!-- Fontfaces CSS-->
     <link href="{{URL::asset('css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{URL::asset('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
@@ -560,11 +561,11 @@
     <script src="{{URL::asset('vendor/circle-progress/circle-progress.min.js')}}"></script>
     <script src="{{URL::asset('vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
     <script src="{{URL::asset('vendor/chartjs/Chart.bundle.min.js')}}"></script>
-    <script src="{{URL::asset('vendor/select2/select2.min.js')}}">
-    </script>
+    <script src="{{URL::asset('vendor/select2/select2.min.js')}}"></script>
 
     <!-- Main JS-->
     <script src="{{URL::asset('js/main.js')}}"></script>
+    
     <script type="text/javascript">
    $(document).ready(function () {
     $('a[href="' + this.location.pathname + '"]').parents().addClass('active');
