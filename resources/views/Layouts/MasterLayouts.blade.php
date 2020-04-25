@@ -248,6 +248,10 @@
                                     </li>
                                 </ul>
                         </li>
+                        <li>
+                            <a href="Klien.html">
+                                <i class="fas fa-calendar-alt"></i>Klien</a>
+                        </li>
                     
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -265,14 +269,10 @@
                                 </ul>
                         </li>
                         <li>
-                            <a href="Klien.html">
-                                <i class="fas fa-calendar-alt"></i>Klien</a>
-                        </li>
-                        <li>
                             <a href="map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
-                        <li class="has-sub">
+                        {{-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Other</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -286,23 +286,23 @@
                                     <a href="forget-pass.html">Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Login</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">Login</a>
+                                    <a href="/Login">Login</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Register</a>
+                                    <a href="/Register">Register</a>
                                 </li>
                                 <li>
-                                    <a href="forget-pass.html">Forget Password</a>
+                                    <a href="/Forgot-passwd">Forget Password</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-sub">
+                        {{-- <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -343,7 +343,7 @@
                                     <a href="Register.html">Register</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>

@@ -44,6 +44,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($satpam as $akun)
+                     
                     <tr class="tr-shadow">
                         <td>
                             <label class="au-checkbox">
@@ -51,12 +53,12 @@
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>Lori Lynch</td>
+                        <td>{{ $akun->name }}</td>
                         <td>
-                            <span class="block-email">lori@example.com</span>
+                            <span class="block-email">{{ $akun->email }}</span>
                         </td>
                         
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td>
+                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $akun->acc_state }}</span></td>
                         <td>
                             <span class="status--active">Aktif</span>
                         </td>
@@ -78,107 +80,7 @@
                         </td>
                     </tr>
                     <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>Lori Lynch</td>
-                        <td>
-                            <span class="block-email">john@example.com</span>
-                        </td>
-                       
-                        <td><span class="role admin">Newbie</span></td>
-                        <td>
-                            <span class="status--active">Aktif</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>Lori Lynch</td>
-                        <td>
-                            <span class="block-email">lyn@example.com</span>
-                        </td>
-                       
-                        <td><span class="role admin">Newbie</span></td>
-                        <td>
-                            <span class="status--warning">Suspend</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>Lori Lynch</td>
-                        <td>
-                            <span class="block-email">doe@example.com</span>
-                        </td>
-                       
-                        <td><span class="role admin">Newbie</span></td>
-                        <td>
-                            <span class="status--pending">belum di konfirmasi</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

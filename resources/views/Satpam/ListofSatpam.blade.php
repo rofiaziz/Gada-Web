@@ -36,20 +36,18 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    @foreach ($satpam as $p)
+
                     <tr>
-                        <td>Siti</td>
-                        <td>Siti@siti.com</td>
-                        <td>Green Land</td>
+                        <td>{{ $p-> name }}</td>
+                        <td>{{ $p-> email }}</td>
+                        <td>{{ $p-> acc_state}}</td>
                         <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td>
-                        <td>Other</td>
+                        <td>{{ $p-> jenis_kelamin }}</td>
                     </tr>
-                    <tr>
-                        <td>Agus</td>
-                        <td>Agus@email.com</td>
-                        <td>Blue Land</td>
-                        <td><span class="role admin">Newbie</span></td>
-                        <td>Laki-Laki</td>
-                    </tr>                    
+                   
+                    @endforeach                   
                 </tbody>
             </table>
         </div>

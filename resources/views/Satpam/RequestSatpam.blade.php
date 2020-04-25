@@ -46,6 +46,8 @@
                 </thead>
                 <tbody>
                     {{-- LOOP START --}}
+                    @foreach ($satpam as $row)
+                    
                     <tr>
                         <td>
                             <label class="au-checkbox">
@@ -55,22 +57,22 @@
                         </td>
                         <td>
                             <div class="table-data__info">
-                                <h6>lori lynch</h6>
+                                <h6>{{ $row -> name }}</h6>
                                 <span>
-                                    <a href="#">johndoe@gmail.com</a>
+                                    <a href="#">{{ $row -> email }}</a>
                                 </span>
                             </div>
                         </td>
                         <td>
-                           100
+                           master
                         </td>
                         <td>
-                            Jl. tanpa Nama
+                            {{ $row -> acc_state }}
                         </td>
                         <td>
                             <span class="role admin">Belum Aktif</span>
                         </td>
-                        <td>
+                        {{-- <td>
                             <div class="table-data-feature">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
@@ -82,122 +84,10 @@
                                     <i class="zmdi zmdi-more"></i>
                                 </button>
                             </div>
-                        </td>
+                        </td> --}}
                     </tr>
-                    <tr>
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>
-                            <div class="table-data__info">
-                                <h6>lori lynch</h6>
-                                <span>
-                                    <a href="#">johndoe@gmail.com</a>
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                           100
-                        </td>
-                        <td>
-                            Jl. tanpa Nama
-                        </td>
-                        <td>
-                            <span class="role admin">Belum Aktif</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>
-                            <div class="table-data__info">
-                                <h6>lori lynch</h6>
-                                <span>
-                                    <a href="#">johndoe@gmail.com</a>
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                           100
-                        </td>
-                        <td>
-                            Jl. tanpa Nama
-                        </td>
-                        <td>
-                            <span class="role admin">Belum Aktif</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>
-                            <div class="table-data__info">
-                                <h6>lori lynch</h6>
-                                <span>
-                                    <a href="#">johndoe@gmail.com</a>
-                                </span>
-                            </div>
-                        </td>
-                        <td>
-                           100
-                        </td>
-                        <td>
-                            Jl. tanpa Nama
-                        </td>
-                        <td>
-                            <a href="/"><span class="role admin">Belum Aktif</span></a>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
+                        
+                    @endforeach
                 </tbody>
             </table>
         </div>
