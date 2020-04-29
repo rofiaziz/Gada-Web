@@ -67,3 +67,17 @@ Route::get('/Register',function(){
 Route::get('/Forgot-passwd',function(){
     return view('Login-Register/Forgot-Password');
 });
+
+
+// Client
+Route::get('/RequestfromClient',function(){
+    return view('Klien/ReqDeploymentClient');
+});
+
+Route::get('/ListofClient',function(){
+    return view('Klien/ListClient');
+});
+
+Route::get('/AddClient',function(){
+    return view('Klien/AddClient');
+});

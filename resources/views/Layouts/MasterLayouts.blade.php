@@ -123,9 +123,20 @@
                                     </li>
                                 </ul>
                         </li>
-                        <li>
-                            <a href="Klien.html">
-                                <i class="fas fa-calendar-alt"></i>Klien</a>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-table"></i>Klien</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/Message/Write">Daftar Klien</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Inbox">Tambah Klien</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Message/Outbox">Request Deploy Satpam</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
                             <a href="map.html">
@@ -248,9 +259,20 @@
                                     </li>
                                 </ul>
                         </li>
-                        <li>
-                            <a href="Klien.html">
-                                <i class="fas fa-calendar-alt"></i>Klien</a>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-table"></i>Klien</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="/ListofClient">Daftar Klien</a>
+                                    </li>
+                                    <li>
+                                        <a href="/AddClient">Tambah Klien</a>
+                                    </li>
+                                    <li>
+                                        <a href="/RequestfromClient">Request Deploy Satpam</a>
+                                    </li>
+                                </ul>
                         </li>
                     
                         <li class="has-sub">

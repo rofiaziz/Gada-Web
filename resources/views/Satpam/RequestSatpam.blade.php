@@ -7,7 +7,7 @@
 
 @section('layout')
 <div class="user-data m-b-30">
-        <h3 class="title-3 m-b-30">
+        <h3 class="title-3 m-b-30" style="font-size:45px;">
             <i class="zmdi zmdi-account-calendar"></i>Daftar Permintaan Akun Satpam</h3>
         <div class="filters m-b-45">
             <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">

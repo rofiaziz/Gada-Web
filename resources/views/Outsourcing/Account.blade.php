@@ -10,22 +10,24 @@
 @section('layout')
 <div class="row">
     <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
-        <!-- DATA TABLE -->
-            <h3 class="title-5 m-b-35" style="font-family: 'Abril Fatface'; font-size:45px;margin-left:12px; margin-top:12px">Daftar Akun Pelanggan</h3>
+        <h3 class="title-3 m-b-30" style="font-size:45px;">
+            <i class="zmdi zmdi-account-calendar" ></i>Daftar Akun Pelanggan</h3>
             <div class="table-data__tool">
                 <div class="table-data__tool-right">
                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                        <i class="zmdi zmdi-plus"></i>add item</button>
-                    <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                        <i class="zmdi zmdi-plus"></i>Tambah Akun</button>
+                    {{-- <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                         <select class="js-select2" name="type">
                             <option selected="selected">Export</option>
                             <option value="">Option 1</option>
                             <option value="">Option 2</option>
                         </select>
                         <div class="dropDownSelect2"></div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
+
+              <!-- DATA TABLE -->
             <div class="table-responsive table-responsive-data2">
                 <table class="table table-data2">
                     <thead>

@@ -8,9 +8,8 @@
 @section('layout')
 <div class="row">
     <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
-        <!-- DATA TABLE -->
-        <h3 class="title-3 m-b-30">
-            <i class="zmdi zmdi-account-calendar"></i>Daftar Permintaan Akun</h3>
+        <h3 class="title-3 m-b-30" style="font-size:45px;">
+            <i class="zmdi zmdi-account-calendar" ></i>Daftar Permintaan Akun</h3>
             {{-- <div class="table-data__tool">
                 <div class="table-data__tool-right">
                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
@@ -25,6 +24,8 @@
                     </div>
                 </div>
             </div> --}}
+
+           <!-- DATA TABLE -->
             <div class="table-responsive table-responsive-data2">
                 <table class="table table-data2">
                     <thead>
@@ -85,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-        <!-- END DATA TABLE -->
+            <!-- END DATA TABLE -->
     </div>
 </div>
 @endsection
