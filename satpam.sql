@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2020 at 10:55 AM
+-- Generation Time: May 08, 2020 at 07:46 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -86,6 +86,14 @@ CREATE TABLE `company` (
   `id_paket` int(11) NOT NULL,
   `verifikasi` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id_company`, `name`, `email`, `pass`, `address`, `city`, `about`, `jumlah_client`, `limit_satpam`, `masa_berlangganan`, `id_paket`, `verifikasi`) VALUES
+(1, 'Garuda', 'garuda@gmail.com', 'Garuda123', 'Yogyakarta', 'Yogya', 'tentang', 100, 100, '1 tahun', 1, 'verified'),
+(2, 'coba coba', 'coba@email', 'coba123', 'jogja stasiun tugu', 'Jogja', 'keterangan lanjut', 10, 10, '1 tahun', 2, 'not verified');
 
 -- --------------------------------------------------------
 
@@ -258,6 +266,15 @@ CREATE TABLE `satpam` (
   `id_client` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `satpam`
+--
+
+INSERT INTO `satpam` (`id_satpam`, `name`, `email`, `pass`, `acc_state`, `jenis_kelamin`, `last_sign`, `id_client`) VALUES
+(1, 'mamas', 'mamas@gmail.com', 'mamas123', 1, 'laki-laki', '0000-00-00 00:00:00', 1),
+(2, 'Ganteng', 'ganteng@email.com', 'ganteng123', 1, 'laki-laki', '2020-04-08 00:00:00', 1),
+(3, 'Bambang', 'bambangganteng@gmail.com', 'bambang123', 0, 'laki-laki', '2020-04-25 00:00:00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -284,7 +301,7 @@ CREATE TABLE `sidik_jari` (
   `id_sidik_jari` int(11) NOT NULL,
   `sidikjari_1` varchar(255) NOT NULL,
   `sidikjari_2` varchar(255) NOT NULL,
-  `id_satpam` int(5) NOT NULL
+  `id_satpam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -315,7 +332,7 @@ INSERT INTO `status` (`id_status`, `jenis_status`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id_user` varchar(5) NOT NULL,
+  `id_user` int(5) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `pass` varchar(100) NOT NULL,
@@ -326,6 +343,14 @@ CREATE TABLE `user` (
   `id_company` int(5) NOT NULL,
   `id_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `name`, `email`, `pass`, `privilage_level`, `state`, `photo`, `id_jabatan`, `id_company`, `id_status`) VALUES
+(1, 'Garuda', 'garuda@gmail.com', 'Garuda123', '1', 1, '', 1, 1, 1),
+(2, 'cobadaftar', 'daftar@gmail.com', 'coba123', '1', 2, '', 1, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -455,7 +480,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `id_company` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_company` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `daily_schedule`
 --
@@ -490,12 +515,17 @@ ALTER TABLE `pendidikan_satpam`
 -- AUTO_INCREMENT for table `satpam`
 --
 ALTER TABLE `satpam`
-  MODIFY `id_satpam` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_satpam` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
   MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -14,7 +14,7 @@
                 <h3 class="title-3 m-b-30" style="font-size:45px;">
                     <i class="zmdi zmdi-account-calendar" ></i>Daftar Akun Satpam</h3>
             </div>
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 <form class="form-header" action="" method="POST">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Cari Perusahaan" aria-label="Cari-Perusahaan" aria-describedby="button-addon2">
@@ -22,8 +22,8 @@
                           <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
                         </div>
                       </div>
-            </form>
-            </div>
+                </form>
+            </div> --}}
         </div>
         <!-- DATA TABLE-->
         <div class="table-responsive m-b-40">
