@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">>
 
 <head>
     <!-- Required meta tags-->
@@ -32,6 +32,12 @@
 
     <!-- Main CSS-->
     <link href="{{URL::asset('css/theme.css')}}" rel="stylesheet" media="all">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    
+
     
     
    
@@ -216,7 +222,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list" >
                             <li>
-                                <a href="/">
+                                <a href="{{url('/')}}">
                                     <i class="fas fa-television"></i>Beranda</a>
                                 </li>
                             <li class="has-sub">
@@ -224,16 +230,16 @@
                                     <i class="fas fa-chart-bar"></i>Outsourching</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="/Outsourcing/Request">Permintaan</a>
+                                        <a href="{{ url('/Outsourcing/Request')}}">Permintaan</a>
                                     </li>
                                     <li>
-                                        <a href="/Outsourcing/Account">Akun</a>
+                                        <a href="{{ url('/Outsourcing/Account')}}">Akun</a>
                                     </li>
                                     <li>
-                                        <a href="/Outsourcing/ListofCustomer">Daftar Pelanggan</a>
+                                        <a href="{{ url('/Outsourcing/ListofCustomer')}}">Daftar Pelanggan</a>
                                     </li>
                                     <li>
-                                        <a href="/Outsourcing/Bills">Tagihan</a>
+                                        <a href="{{ url('/Outsourcing/Bills')}}">Tagihan</a>
                                     </li>
                                 </ul>
                             </li>
@@ -243,19 +249,19 @@
                                 <i class="fas fa-table"></i>Satpam</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="/Satpam/RequestSatpam">Permintaan</a>
+                                        <a href="{{ url('/Satpam/RequestSatpam')}}">Permintaan</a>
                                     </li>
                                     <li>
-                                        <a href="/Satpam/AccountSatpam">Akun</a>
+                                        <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
                                     </li>
                                     <li>
-                                        <a href="/Satpam/ListofSatpam">Daftar Satpam</a>
+                                        <a href="{{ url('/Satpam/ListofSatpam')}}">Daftar Satpam</a>
                                     </li>
                                     <li>
-                                        <a href="/Satpam/Tracking">Tracking</a>
+                                        <a href="{{ url('/Satpam/Tracking')}}">Tracking</a>
                                     </li>
                                     <li>
-                                        <a href="/Satpam/DeploymentSatpam">Deployment</a>
+                                        <a href="{{ url('/Satpam/DeploymentSatpam')}}">Deployment</a>
                                     </li>
                                 </ul>
                         </li>
@@ -264,13 +270,13 @@
                                 <i class="fas fa-table"></i>Klien</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="/ListofClient">Daftar Klien</a>
+                                        <a href="{{ url('/ListofClient')}}">Daftar Klien</a>
                                     </li>
                                     <li>
-                                        <a href="/AddClient">Tambah Klien</a>
+                                        <a href="{{ url('/AddClient')}}">Tambah Klien</a>
                                     </li>
                                     <li>
-                                        <a href="/RequestfromClient">Request Deploy Satpam</a>
+                                        <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
                                     </li>
                                 </ul>
                         </li>
@@ -280,13 +286,13 @@
                                 <i class="fas fa-envelope"></i>Pesan</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                     <li>
-                                        <a href="/Message/Write">Tulis Pesan</a>
+                                        <a href="{{ url('/Message/Write')}}">Tulis Pesan</a>
                                     </li>
                                     <li>
-                                        <a href="/Message/Inbox">Pesan Masuk</a>
+                                        <a href="{{ url('/Message/Inbox')}}">Pesan Masuk</a>
                                     </li>
                                     <li>
-                                        <a href="/Message/Outbox">Pesan Keluar</a>
+                                        <a href="{{ url('/Message/Outbox')}}">Pesan Keluar</a>
                                     </li>
                                 </ul>
                         </li>
@@ -314,13 +320,13 @@
                                 <i class="fas fa-copy"></i>Login</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="/Login">Login</a>
+                                    <a href="{{ url('/Login')}}">Login</a>
                                 </li>
                                 <li>
-                                    <a href="/Register">Register</a>
+                                    <a href="{{ url('/Register')}}">Register</a>
                                 </li>
                                 <li>
-                                    <a href="/Forgot-passwd">Forget Password</a>
+                                    <a href="{{ url('/Forgot-passwd')}}">Forget Password</a>
                                 </li>
                             </ul>
                         </li>
@@ -396,7 +402,7 @@
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                    <img src="{{ url::ASSET('images/icon/avatar-06.jpg')}}" alt="Michelle Moreno" />
                                                 </div>
                                                 <div class="content">
                                                     <h6>Michelle Moreno</h6>
@@ -446,7 +452,7 @@
                                             </div>
                                             <div class="email__item">
                                                 <div class="image img-cir img-40">
-                                                    <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
+                                                    <img src="{{ url::ASSET('images/icon/avatar-04.jpg')}}" alt="Cynthia Harvey" />
                                                 </div>
                                                 <div class="content">
                                                     <p>Meeting about new Beranda...</p>
@@ -515,9 +521,9 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">{{ Auth::user()->name }}</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{ Auth::user()->email }}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -535,8 +541,13 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                    <i class="zmdi zmdi-power"></i>Logout
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

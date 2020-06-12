@@ -1,18 +1,20 @@
 @extends('Layouts/MasterLayouts')
 
 @section('Title')
-    <title>GadaMaxima - Daftar Akun Satpam</title>
+    <title>GadaMaxima - Daftar Satpam</title>
 @endsection
 @section('ExtraFont')
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">  
 @endsection
 @section('layout')
+                       
 <div class="row">
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">
-                <h3 class="title-3 m-b-30" style="font-size:45px;">
-                    <i class="zmdi zmdi-account-calendar" ></i>Daftar Akun Satpam</h3>
+                <h3 class="title-3 m-b-30" style="font-size:45px;" >
+                    <i class="zmdi zmdi-account-calendar" ></i>
+                    <b>Daftar Satpam</b></h3>
             </div>
             {{-- <div class="col-md-6">
                 <form class="form-header" action="" method="POST">
@@ -26,15 +28,17 @@
             </div> --}}
         </div>
         <!-- DATA TABLE-->
+        
         <div class="table-responsive m-b-40">
             <table class="table table-borderless table-data3">
                 <thead>
-                    <tr>
-                        <th>Nama Satpam</th>
-                        <th>Email</th>
-                        <th>Alamat</th>
-                        <th>Strata</th>
-                        <th>Jenis Kelamin</th>
+                    <tr >
+                        <th><b style="color: whitesmoke">Nama Satpam</b></th>
+                        <th><b style="color: whitesmoke">Email</b></th>
+                        <th><b style="color: whitesmoke">Alamat</b></th>
+                        <th><b style="color: whitesmoke">Strata</b></th>
+                        <th><b style="color: whitesmoke">Jenis Kelamin</b></th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -42,11 +46,11 @@
                     @foreach ($satpam as $p)
 
                     <tr>
-                        <td>{{ $p-> name }}</td>
-                        <td>{{ $p-> email }}</td>
-                        <td>{{ $p-> acc_state}}</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td>
-                        <td>{{ $p-> jenis_kelamin }}</td>
+                        <td><p style="color: black">{{ $p-> name }} </p></td>
+                        <td><p style="color: black">{{ $p-> email }}</td>
+                        <td><p style="color: black">{{ $p-> acc_state}}</td>
+                        <td><p style="color: black">Master</span></td>
+                        <td><p style="color: black">{{ $p-> jenis_kelamin }}</td>
                     </tr>
                    
                     @endforeach                   

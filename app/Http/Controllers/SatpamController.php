@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class SatpamController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
     //requst data satpam
     public function index(){
         $satpam = DB::table('satpam')->get();

@@ -1,7 +1,7 @@
 @extends('Layouts/MasterLayouts')
 
 @section('Title')
-    <title>GadaMaxima - Daftar Klien</title>
+    <title>GadaMaxima - Ubah Perusahaan</title>
 @endsection
 @section('ExtraFont')
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -10,21 +10,11 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <h3 class="title-3 m-b-30" style="font-size:45px;" >
                 <i class="zmdi zmdi-account-calendar" ></i>
-                <b>Tambah Klien</b></h3>
-        </div>
-            {{-- <div class="col-md-6">
-                <form class="form-header" action="" method="POST">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cari Perusahaan" aria-label="Cari-Perusahaan" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                        </div>
-                      </div>
-            </form>
-        </div> --}}
+                <b>Ubah Data Perusahaan</b></h3>
+            </div>  
         </div>
         <!-- DATA TABLE-->
         <div class="content">
@@ -32,7 +22,7 @@
               <div class="col-md-8 offset-md-2">
                   <div class="card card-user">
                     <div class="card-header">
-                      <p class="card-title" style="text-align:center; font-size:25px; color: black;"><b>Tambah Klien Baru</b></p>
+                      <p class="card-title" style="text-align:center; font-size:25px; color: black;"><b>Ubah Data Perusahaan</b></p>
                     </div>
                     <div class="card-body">
                       <form>
@@ -71,7 +61,7 @@
                         </div>
                       <div class="row">
                           <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary btn-round" style="width:20rem; font-size:19px">Tambahkan</button>
+                            <button type="submit" class="btn btn-primary btn-round" style="width:20rem; font-size:19px">Ubah</button>
                           </div>
                         </div>
                       </form>

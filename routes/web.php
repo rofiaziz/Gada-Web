@@ -10,27 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('Beranda/Beranda');
-});
+
+
 //Outsourcing
 Route::get('/Outsourcing/ListofCustomer','OutsourcingController@index');
 Route::get('/Outsourcing/Account','OutsourcingController@account');
 Route::get('/Outsourcing/Request','OutsourcingController@request');
-
-// Route::get('/Outsourcing/Request', function () {
-//     return view('Outsourcing/Request');
-// });
-// Route::get('/Outsourcing/Account', function () {
-//     return view('Outsourcing/Account');
-// });
-// Route::get('/Outsourcing/ListofCustomer', function (){
-//     return view('Outsourcing/ListofCustomer');
-// });
 Route::get('/Outsourcing/Bills', function (){
     return view('Outsourcing/Bills');
 });
+Route::get('/Outsourcing/AddCustomer', function (){
+    return view('Outsourcing/AddCustomer');
+});
+
+Route::get('/Outsourcing/EditCustomer', function (){
+    return view('Outsourcing/EditCustomer');
+});
+
 
 // Satpam
     //Satpam Get
@@ -81,3 +79,9 @@ Route::get('/ListofClient',function(){
 Route::get('/AddClient',function(){
     return view('Klien/AddClient');
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -10,7 +10,7 @@
     <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
         
         <h3 class="title-3 m-b-30" style="font-size:45px;">
-            <i class="zmdi zmdi-account-calendar" ></i>Daftar Akun Satpam</h3>
+            <i class="zmdi zmdi-account-calendar" ></i><b>Daftar Akun Satpam</b></h3>
         <div class="table-data__tool">
             <div class="table-data__tool-right">
                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
@@ -37,10 +37,10 @@
                                 <span class="au-checkmark"></span>
                             </label>
                         </th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Strata</th>
-                        <th>Status</th>
+                        <th><b style="font-size:20px; color: black">Nama</b></th>
+                        <th><b style="font-size:20px; color: black">Email</b></th>
+                        <th><b style="font-size:20px; color: black">Strata</b></th>
+                        <th><b style="font-size:20px; color: black">Status</b></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -54,9 +54,9 @@
                                 <span class="au-checkmark"></span>
                             </label>
                         </td>
-                        <td>{{ $akun->name }}</td>
+                        <td><p style="color: black">{{ $akun->name }}</td>
                         <td>
-                            <span class="block-email">{{ $akun->email }}</span>
+                            <span class="block-email"><p style="color: black">{{ $akun->email }}</span>
                         </td>
                         
                         <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $akun->acc_state }}</span></td>

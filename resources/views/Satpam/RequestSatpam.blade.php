@@ -7,41 +7,19 @@
 
 @section('layout')
 <div class="user-data m-b-30">
-        <h3 class="title-3 m-b-30" style="font-size:45px;">
-            <i class="zmdi zmdi-account-calendar"></i>Daftar Permintaan Akun Satpam</h3>
-        <div class="filters m-b-45">
-            <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
-                <select class="js-select2" name="property">
-                    <option selected="selected">All Properties</option>
-                    <option value="">Products</option>
-                    <option value="">Services</option>
-                </select>
-                <div class="dropDownSelect2"></div>
-            </div>
-            <div class="rs-select2--dark rs-select2--sm rs-select2--border">
-                <select class="js-select2 au-select-dark" name="time">
-                    <option selected="selected">All Time</option>
-                    <option value="">By Month</option>
-                    <option value="">By Day</option>
-                </select>
-                <div class="dropDownSelect2"></div>
-            </div>
-        </div>
+        <h3 class="title-3 m-b-30" style="font-size:45px; color: black">
+            <i class="zmdi zmdi-account-calendar"></i><b style="color: black">Daftar Permintaan Akun Satpam</b></h3>
+        
         <div class="table-responsive table-data">
             <table class="table">
                 <thead>
                     <tr>
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>Nama</td>
-                        <td>Strata</td>
-                        <td>Alamat</td>
-                        <td>Status</td>
-                        <td></td>
+                        
+                        <td><b style="font-size:20px; color: black">Nama</td>
+                        <td><b style="font-size:20px; color: black">Strata</td>
+                        <td><b style="font-size:20px; color: black">Alamat</td>
+                        <td><b style="font-size:20px; color: black">Status</td>
+                        <td><b style="font-size:20px; color: black">Aksi</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,42 +27,35 @@
                     @foreach ($satpam as $row)
                     
                     <tr>
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
+                        
                         <td>
                             <div class="table-data__info">
-                                <h6>{{ $row -> name }}</h6>
+                                <p style="color: black">{{ $row -> name }}</p>
                                 <span>
                                     <a href="#">{{ $row -> email }}</a>
                                 </span>
                             </div>
                         </td>
                         <td>
-                           master
+                            <p style="color: black"> Master
                         </td>
                         <td>
-                            {{ $row -> acc_state }}
+                            <p style="color: black"> {{ $row -> acc_state }}
                         </td>
                         <td>
-                            <span class="role admin">Belum Aktif</span>
+                            <span class="role admin">Belum Aktif</h5></span>
                         </td>
-                        {{-- <td>
+                        <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Terima">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
+                                
                             </div>
-                        </td> --}}
+                        </td>
                     </tr>
                         
                     @endforeach

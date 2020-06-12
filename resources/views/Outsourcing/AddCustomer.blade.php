@@ -1,7 +1,7 @@
 @extends('Layouts/MasterLayouts')
 
 @section('Title')
-    <title>GadaMaxima - Daftar Klien</title>
+    <title>GadaMaxima - Tambah Perusahaan</title>
 @endsection
 @section('ExtraFont')
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -10,10 +10,10 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <h3 class="title-3 m-b-30" style="font-size:45px;" >
                 <i class="zmdi zmdi-account-calendar" ></i>
-                <b>Tambah Klien</b></h3>
+                <b>Tambah Perusahaan Baru</b></h3>
         </div>
             {{-- <div class="col-md-6">
                 <form class="form-header" action="" method="POST">
