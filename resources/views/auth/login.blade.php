@@ -54,7 +54,7 @@
                     <div class="register-link">
                         <p>
                             Belum Punya Akun?
-                            <a href="{{ url('/Register')}}">Daftar di sini</a>
+                            <a href="{{ url('/register')}}">Daftar di sini</a>
                         </p>
                     </div>
                 </div>

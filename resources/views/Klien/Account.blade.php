@@ -15,7 +15,7 @@
             <div class="table-data__tool">
                 <div class="table-data__tool-right">
                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                        <i class="zmdi zmdi-plus"></i>Tambah Akun</button>
+                        {{-- <i class="zmdi zmdi-plus"></i>Tambah Akun</button> --}}
                     {{-- <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                         <select class="js-select2" name="type">
                             <option selected="selected">Export</option>
@@ -41,7 +41,7 @@
                             <th>Nama Perusahaan</th>
                             <th>Email</th>
                             {{-- <th>Perusahaan</th> --}}
-                            <th>Level</th>
+                            {{-- <th>Level</th> --}}
                             <th>Status</th>
                             <th></th>
                         </tr>
@@ -59,21 +59,21 @@
                             </td>
                             <td>{{ $p-> name }}</td>
                             <td>
-                                <span class="block-email">{{ $p-> email }}</span>
+                                <span class="block-email">{{ $p->client_account['email'] }}</span>
                             </td>
                             {{-- <td class="desc">Garuda:</td> --}}
-                            <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td>
+                            {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td> --}}
                             <td>
                                 <span class="status--active">Aktif</span>
                             </td>
                             <td>
                                 <div class="table-data-feature">
-                                    <a href="/Outsourcing/Edit/{{ $p->id }}">
+                                    <a href="/Client/Edit/{{ $p->id }}">
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                             <i class="zmdi zmdi-edit" ></i> 
                                         </button>
                                     </a>
-                                    <a href="/Outsourcing/Delete/{{ $p->id }}">
+                                    <a href="/Client/Delete/{{ $p->id }}">
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                             <i class="zmdi zmdi-delete"></i>
                                         </button>

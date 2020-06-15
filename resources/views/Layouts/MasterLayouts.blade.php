@@ -83,10 +83,13 @@
                                         <a href="/Outsourcing/Request">Permintaan</a>
                                     </li>
                                     <li>
+                                        <a href="/Outsourcing/Add">Tambah Outsourcing</a>
+                                    </li>
+                                    <li>
                                         <a href="/Outsourcing/Account">Akun</a>
                                     </li>
                                     <li>
-                                        <a href="/Outsourcing/ListofCustomer">Daftar Pelanggan</a>
+                                        <a href="/Outsourcing/ListofCustomer">Daftar Outsourcing</a>
                                     </li>
                                     <li>
                                         <a href="/Outsourcing/Bills">Tagihan</a>
@@ -100,18 +103,7 @@
                                     <li>
                                         <a href="/Satpam/RequestSatpam">Permintaan</a>
                                     </li>
-                                    <li>
-                                        <a href="/Outsourcing/Account">Akun</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Outsourcing/ListofCustomer">Daftar Satpam</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Outsourcing/Bills">Tracking</a>
-                                    </li>
-                                    <li>
-                                        <a href="/Outsourcing/Bills">Deployment</a>
-                                    </li>
+                                   
                                 </ul>
                         </li>
                         <li class="has-sub">
@@ -233,14 +225,17 @@
                                         <a href="{{ url('/Outsourcing/Request')}}">Permintaan</a>
                                     </li>
                                     <li>
+                                        <a href="/Outsourcing/Add">Tambah Outsourching</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('/Outsourcing/Account')}}">Akun</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/Outsourcing/ListofCustomer')}}">Daftar Pelanggan</a>
+                                        <a href="{{ url('/Outsourcing/ListofCustomer')}}">Daftar Outsourcing</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('/Outsourcing/Bills')}}">Tagihan</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
                        
@@ -248,18 +243,18 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-table"></i>Satpam</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('/Satpam/RequestSatpam')}}">Permintaan</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a href="{{ url('/Satpam/ListofSatpam')}}">Daftar Satpam</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('/Satpam/Tracking')}}">Tracking</a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a href="{{ url('/Satpam/DeploymentSatpam')}}">Deployment</a>
                                     </li>
@@ -320,10 +315,10 @@
                                 <i class="fas fa-copy"></i>Login</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ url('/Login')}}">Login</a>
+                                    <a href="{{ url('/login')}}">Login</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/Register')}}">Register</a>
+                                    <a href="{{ url('/register')}}">Register</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/Forgot-passwd')}}">Forget Password</a>
@@ -510,7 +505,7 @@
                                             <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -526,20 +521,7 @@
                                                     <span class="email">{{ Auth::user()->email }}</span>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="account-dropdown__footer">
                                                 <a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

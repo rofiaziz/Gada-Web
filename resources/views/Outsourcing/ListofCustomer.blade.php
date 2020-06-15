@@ -29,10 +29,11 @@
                 <thead>
                     <tr>
                         <th>Nama Perusahaan</th>
-                        <th>Email</th>
+                        <th>Kota</th>
                         <th>Alamat</th>
                         <th>Jumlah Client</th>
                         <th>Jenis paket</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,11 +41,25 @@
                     @foreach ($List as $p)
 
                     <tr>
-                        <td>{{ $p-> name }}</td>
-                        <td>{{ $p-> email }}</td>
-                        <td>{{ $p-> address}}</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $p-> jumlah_client }}</span></td>
-                        <td>{{ $p-> limit_satpam }}</td>
+                        <td>{{ $p-> Name }}</td>
+                        <td>{{ $p-> City }}</td>
+                        <td>{{ $p-> Address}}</td>
+                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $p-> Client_count }}</span></td>
+                        <td>{{ $p-> Satpam_count }}</td>
+                        <td>
+                            <div class="table-data-feature">
+                                <a href="/Outsourcing/Edit/{{ $p->id }}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="zmdi zmdi-edit" ></i> 
+                                    </button>
+                                </a>
+                                <a href="/Outsourcing/Delete/{{ $p->id }}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                    
                     @endforeach                   

@@ -18,16 +18,37 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/Outsourcing/ListofCustomer','OutsourcingController@index');
 Route::get('/Outsourcing/Account','OutsourcingController@account');
 Route::get('/Outsourcing/Request','OutsourcingController@request');
+
+Route::post('/Outsourcing/store','OutsourcingController@store');
+Route::get('/Outsourcing/Add','OutsourcingController@add');
+
+Route::get('/Outsourcing/Edit/{id}','OutsourcingController@edit');
+Route::post('/Outsourcing/Update/{id}','OutsourcingController@update');
+
+Route::get('/Outsourcing/Delete/{id}','OutsourcingController@delete');
+
+
 Route::get('/Outsourcing/Bills', function (){
     return view('Outsourcing/Bills');
 });
-Route::get('/Outsourcing/AddCustomer', function (){
-    return view('Outsourcing/AddCustomer');
-});
 
-Route::get('/Outsourcing/EditCustomer', function (){
-    return view('Outsourcing/EditCustomer');
-});
+
+
+// Client
+Route::get('/AccountofClient', 'ClientController@account');
+Route::get('/ListofClient', 'ClientController@index');
+
+
+Route::get('/AddClient','ClientController@add');
+Route::post('/Client/store','ClientController@store');
+
+Route::get('/Client/Edit/{id}','ClientController@edit');
+Route::post('/Client/Update/{id}','ClientController@update');
+
+Route::get('/Client/Delete/{id}','ClientController@delete');
+
+
+
 
 
 // Satpam
@@ -55,30 +76,16 @@ Route::get('/Message/Outbox', function(){
 
 
 
-// Login & Register
-Route::get('/Login',function(){
-    return view('Login-Register/Login');
-});
-Route::get('/Register',function(){
-    return view('Login-Register/Register');
-});
+
+
+
+
 Route::get('/Forgot-passwd',function(){
     return view('Login-Register/Forgot-Password');
 });
 
 
-// Client
-Route::get('/RequestfromClient',function(){
-    return view('Klien/ReqDeploymentClient');
-});
 
-Route::get('/ListofClient',function(){
-    return view('Klien/ListClient');
-});
-
-Route::get('/AddClient',function(){
-    return view('Klien/AddClient');
-});
 
 
 

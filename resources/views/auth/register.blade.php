@@ -71,7 +71,7 @@
                     <div class="register-link">
                         <p>
                             Sudah Punya Akun?
-                            <a href={{ url('/Login')}}>Masuk disini</a>
+                            <a href={{ url('/login')}}>Masuk disini</a>
                         </p>
                     </div>
                 </div>

@@ -29,25 +29,25 @@
                 <thead>
                     <tr>
                         <th>Nama Klien</th>
-                        <th>Email</th>
-                        <th>Alamat</th>
-                        <th>Jumlah Client</th>
-                        <th>Jenis paket</th>
+                        <th>Lokasi</th>
+                        <th>Berlangganan sampai</th>
+                        {{-- <th>Jumlah Client</th> --}}
+                        <th>Satpam Aktif</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{-- @foreach ($List as $p) --}}
+                    @foreach ($List as $p)
 
                     <tr>
-                        <td>p-> name }}</td>
-                        <td>p-> email }}</td>
-                        <td>p-> address}}</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">p-> jumlah_client }}</span></td>
-                        <td>p-> limit_satpam }}</td>
+                        <td>{{ $p-> name }}</td>
+                        <td>{{ $p-> location }}</td>
+                        <td>{{ $p-> valid_since}}</td>
+                        {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">p-> jumlah_client }}</span></td> --}}
+                        <td>{{ $p-> security_active }}</td>
                     </tr>
                    
-                    {{-- @endforeach                    --}}
+                    @endforeach                   
                 </tbody>
             </table>
         </div>

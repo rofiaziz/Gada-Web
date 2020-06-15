@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','company_id'
     ];
 
     /**
@@ -33,5 +34,10 @@ class User extends Authenticatable
     }
     public function roles(){
         return $this->belongsToMany('App\Role');
+    }
+
+    public function company()
+    {
+    	return $this->belongsTo('App\company');
     }
 }
