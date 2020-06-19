@@ -15,39 +15,43 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 //Outsourcing
-Route::get('/Outsourcing/ListofCustomer','OutsourcingController@index');
-Route::get('/Outsourcing/Account','OutsourcingController@account');
-Route::get('/Outsourcing/Request','OutsourcingController@request');
+Route::group(['middleware' => ['CheckRole:admin']], function () {
+    Route::get('/Outsourcing/ListofCustomer','OutsourcingController@index');
+    Route::get('/Outsourcing/Account','OutsourcingController@account');
+    Route::get('/Outsourcing/Request','OutsourcingController@request');
 
-Route::post('/Outsourcing/store','OutsourcingController@store');
-Route::get('/Outsourcing/Add','OutsourcingController@add');
+    Route::post('/Outsourcing/store','OutsourcingController@store');
+    Route::get('/Outsourcing/Add','OutsourcingController@add');
 
-Route::get('/Outsourcing/Edit/{id}','OutsourcingController@edit');
-Route::post('/Outsourcing/Update/{id}','OutsourcingController@update');
+    Route::get('/Outsourcing/Edit/{id}','OutsourcingController@edit');
+    Route::post('/Outsourcing/Update/{id}','OutsourcingController@update');
 
-Route::get('/Outsourcing/Delete/{id}','OutsourcingController@delete');
+    Route::get('/Outsourcing/Delete/{id}','OutsourcingController@delete');
 
 
-Route::get('/Outsourcing/Bills', function (){
-    return view('Outsourcing/Bills');
+    Route::get('/Outsourcing/Bills', function (){
+        return view('Outsourcing/Bills');
+    });
+
 });
 
-
-
 // Client
-Route::get('/AccountofClient', 'ClientController@account');
-Route::get('/ListofClient', 'ClientController@index');
+Route::group(['middleware' => ['CheckRole:admin,outsourcing']], function () {
+    
+
+    Route::get('/AccountofClient', 'ClientController@account');
+    Route::get('/ListofClient', 'ClientController@index');
 
 
-Route::get('/AddClient','ClientController@add');
-Route::post('/Client/store','ClientController@store');
+    Route::get('/AddClient','ClientController@add');
+    Route::post('/Client/store','ClientController@store');
 
-Route::get('/Client/Edit/{id}','ClientController@edit');
-Route::post('/Client/Update/{id}','ClientController@update');
+    Route::get('/Client/Edit/{id}','ClientController@edit');
+    Route::post('/Client/Update/{id}','ClientController@update');
 
-Route::get('/Client/Delete/{id}','ClientController@delete');
+    Route::get('/Client/Delete/{id}','ClientController@delete');
 
-
+});
 
 
 
@@ -64,6 +68,10 @@ Route::get('/Satpam/DeploymentSatpam', function (){
 
 
 //Message
+
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+
 Route::get('/Message/Write', function(){
     return view('Message/Write');
 });
@@ -92,3 +100,5 @@ Route::get('/Forgot-passwd',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

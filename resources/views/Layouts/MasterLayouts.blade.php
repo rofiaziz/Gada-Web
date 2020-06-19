@@ -155,48 +155,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="Login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="Register.html">Register</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </div>
             </nav>
@@ -216,7 +175,9 @@
                             <li>
                                 <a href="{{url('/')}}">
                                     <i class="fas fa-television"></i>Beranda</a>
-                                </li>
+                            </li>
+
+                            @if (auth()->user()->role == 'admin')
                             <li class="has-sub">
                                 <a class="js-arrow" href="#" disabled>
                                     <i class="fas fa-chart-bar"></i>Outsourching</a>
@@ -238,43 +199,49 @@
                                     </li> --}}
                                 </ul>
                             </li>
+                            @endif
                        
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-table"></i>Satpam</a>
-                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                    {{-- <li>
-                                        <a href="{{ url('/Satpam/RequestSatpam')}}">Permintaan</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
-                                    </li> --}}
-                                    <li>
-                                        <a href="{{ url('/Satpam/ListofSatpam')}}">Daftar Satpam</a>
-                                    </li>
-                                    {{-- <li>
-                                        <a href="{{ url('/Satpam/Tracking')}}">Tracking</a>
-                                    </li> --}}
-                                    <li>
-                                        <a href="{{ url('/Satpam/DeploymentSatpam')}}">Deployment</a>
-                                    </li>
-                                </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-table"></i>Klien</a>
-                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                    <li>
-                                        <a href="{{ url('/ListofClient')}}">Daftar Klien</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/AddClient')}}">Tambah Klien</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
-                                    </li>
-                                </ul>
-                        </li>
+                        
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-table"></i>Satpam</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        {{-- <li>
+                                            <a href="{{ url('/Satpam/RequestSatpam')}}">Permintaan</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
+                                        </li> --}}
+                                        <li>
+                                            <a href="{{ url('/Satpam/ListofSatpam')}}">Daftar Satpam</a>
+                                        </li>
+                                        {{-- <li>
+                                            <a href="{{ url('/Satpam/Tracking')}}">Tracking</a>
+                                        </li> --}}
+                                        <li>
+                                            <a href="{{ url('/Satpam/DeploymentSatpam')}}">Deployment</a>
+                                        </li>
+                                    </ul>
+                            </li>
+                        
+                        @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'outsourcing'))
+                                                    
+                            <li class="has-sub">
+                                <a class="js-arrow" href="#">
+                                    <i class="fas fa-table"></i>Klien</a>
+                                    <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                        <li>
+                                            <a href="{{ url('/ListofClient')}}">Daftar Klien</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/AddClient')}}">Tambah Klien</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
+                                        </li>
+                                    </ul>
+                            </li>
+                        @endif
                     
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -291,82 +258,8 @@
                                     </li>
                                 </ul>
                         </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        {{-- <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Other</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Paket</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Lokasi</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Login</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="{{ url('/login')}}">Login</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/register')}}">Register</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/Forgot-passwd')}}">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        {{-- <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="Login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="Register.html">Register</a>
-                                </li>
-                            </ul>
-                        </li> --}}
+                     
+                        
                     </ul>
                 </nav>
             </div>
@@ -501,19 +394,19 @@
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
+                                        {{-- <div class="image">
                                             <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
-                                        </div>
+                                        </div> --}}
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                <div class="image">
+                                                {{-- <div class="image">
                                                     <a href="#">
                                                         <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
                                                     </a>
-                                                </div>
+                                                </div> --}}
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#">{{ Auth::user()->name }}</a>
@@ -580,6 +473,7 @@
 
     <!-- Main JS-->
     <script src="{{URL::asset('js/main.js')}}"></script>
+    <script src="{{URL::asset('js/app.js')}}"></script>
     
     <script type="text/javascript">
    $(document).ready(function () {
