@@ -71,6 +71,7 @@ Route::get('/Satpam/DeploymentSatpam', function (){
 
 Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
 
 Route::get('/Message/Write', function(){
     return view('Message/Write');
