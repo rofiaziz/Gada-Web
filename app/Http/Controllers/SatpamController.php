@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\company;
+use App\Client;
+use App\satpam;
+use App\profilesatpam;
 
 class SatpamController extends Controller
 {
@@ -28,9 +32,33 @@ class SatpamController extends Controller
         return view('/Satpam/AccountSatpam',['satpam' => $satpam]);
     }
 
-    public function request(){
-        $satpam = DB::table('satpam')->whereacc_state(0)->get();
+    public function deploy(){
+        // if (auth()->user()->role == 'admin') {
+           
+        //     $client = Client::all();
+        //     $profil = profile_satpam::all();
 
-        return view('/Satpam/RequestSatpam',['satpam' => $satpam]);
+        //     return
+
+        // }
+        // elseif(auth()->user()->role == 'outsourcing'){
+        //     $satpam = satpam::where('company_id' , Auth::user()->id)
+        //     ->get();
+           
+
+        // }elseif(auth()->user()->role == 'client'){
+            
+        //     $satpam = satpam::where('client_id' , Auth::user()->id)
+        //     ->get();
+        // }
+        $client = Client::all();
+        $satpam = satpam::all();
+        
+        $profil = profilesatpam::with([`satpam`=>function($query)
+        {$query->where('satpam_id',$satpam->id);}])->get();
+        
+
+        return view('/Satpam/DeploymentSatpam',['satpam' => $satpam, 'profil' => $profil, 'client' => $client] );
+        
     }
 }

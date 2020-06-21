@@ -29,15 +29,14 @@ class User extends Authenticatable
     ];
 
 
-    public function permissions(){
-        return $this->belongsToMany('App\Permission');
-    }
-    public function roles(){
-        return $this->belongsToMany('App\Role');
-    }
+    
 
     public function company()
     {
     	return $this->belongsTo('App\company');
     }
+
+    
+
+
 }

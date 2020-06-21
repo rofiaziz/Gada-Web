@@ -236,27 +236,17 @@
                                         <li>
                                             <a href="{{ url('/AddClient')}}">Tambah Klien</a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                             </li>
                         @endif
                     
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{ url('/Message/Inbox')}}">
                                 <i class="fas fa-envelope"></i>Pesan</a>
-                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                    <li>
-                                        <a href="{{ url('/Message/Write')}}">Tulis Pesan</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/Message/Inbox')}}">Pesan Masuk</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/Message/Outbox')}}">Pesan Keluar</a>
-                                    </li>
-                                </ul>
+                                
                         </li>
                      
                         
@@ -280,7 +270,7 @@
                                 </button>
                             </form>
                             <div class="header-button">
-                                <div class="noti-wrap">
+                                {{-- <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
                                         <i class="zmdi zmdi-comment-more"></i>
                                         <span class="quantity">1</span>
@@ -391,22 +381,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        {{-- <div class="image">
-                                            <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
-                                        </div> --}}
+                                        <div class="image">
+                                            <img src="{{ Auth::user()->profile_image}}" alt="{{ Auth::user()->name }}" />
+                                        </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                {{-- <div class="image">
+                                                <div class="image">
                                                     <a href="#">
-                                                        <img src="{{URL::asset('images/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                        <img src="{{ Auth::user()->profile_image}}" alt="{{ Auth::user()->name }}" />
                                                     </a>
-                                                </div> --}}
+                                                </div>
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#">{{ Auth::user()->name }}</a>

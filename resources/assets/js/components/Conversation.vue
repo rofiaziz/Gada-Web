@@ -9,7 +9,6 @@
 <script>
     import MessagesFeed from './MessagesFeed';
     import MessageComposer from './MessageComposer';
-
     export default {
         props: {
             contact: {
@@ -26,7 +25,6 @@
                 if (!this.contact) {
                     return;
                 }
-
                 axios.post('/conversation/send', {
                     contact_id: this.contact.id,
                     text: text
@@ -45,7 +43,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     h1 {
         font-size: 20px;
         padding: 10px;

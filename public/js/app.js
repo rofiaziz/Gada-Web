@@ -40153,12 +40153,12 @@ var render = function() {
   return _c("div", { staticClass: "contacts-list" }, [
     _c(
       "ul",
-      _vm._l(_vm.contacts, function(contact, index) {
+      _vm._l(_vm.contacts, function(contact) {
         return _c(
           "li",
           {
             key: contact.id,
-            class: { selected: index == _vm.selected },
+            class: { selected: contact == _vm.selected },
             on: {
               click: function($event) {
                 return _vm.selectContact(contact)
@@ -40255,7 +40255,7 @@ var render = function() {
           expression: "message"
         }
       ],
-      attrs: { placeholder: "Message..." },
+      attrs: { placeholder: "Pesan..." },
       domProps: { value: _vm.message },
       on: {
         keydown: function($event) {

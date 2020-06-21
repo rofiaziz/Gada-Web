@@ -16,4 +16,18 @@ class Client extends Model
     	return $this->hasOne('App\client_account');
     }
 
+    public function schedule()
+    {
+    	return $this->hasOne('App\schedule');
+    }
+
+    public function attendance()
+    {
+    	return $this->hasOne('App\attendance');
+    }
+    public function satpam()
+    {
+        return $this->hasMany('App\satpam');
+    }
+
 }

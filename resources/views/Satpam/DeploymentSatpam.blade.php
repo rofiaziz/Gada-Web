@@ -28,37 +28,29 @@
         </div>
         <div class="table-responsive table-responsive-data2">
             <table class="table table-data2">
+               
                 <thead>
                     <tr>
-                        <th>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </th>
+                        
                         <th>Nama</th>
                         <th>Email</th>
-                        <th>Strata</th>
+                        {{-- <th>Strata</th> --}}
                         <th>Perusahaan Penempatan</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($satpam as $s)
                     <tr class="tr-shadow">
+                        
+                        <td> {{$s ->profils['Name'] }}</td>
                         <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>Agus</td>
-                        <td>
-                            <span class="block-email">Agus@example.com</span>
+                            <span class="block-email">{{ $s -> email }}</span>
                         </td>
                         
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td>
-                        <td class="desc">BRI</td>
+                        {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td> --}}
+                        <td class="desc">{{ $s -> client['name'] }}</td>
                         <td>
                             <span class="status--active">Aktif</span>
                         </td>
@@ -80,40 +72,7 @@
                         </td>
                     </tr>
                     <tr class="spacer"></tr>
-                    <tr class="tr-shadow">
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
-                        <td>John</td>
-                        <td>
-                            <span class="block-email">john@example.com</span>
-                        </td>
-                       
-                        <td><span class="role admin">Newbie</span></td>
-                        <td class="desc">BNI</td>
-                        <td>
-                            <span class="status--active">Aktif</span>
-                        </td>
-                        <td>
-                            <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>                   
+                  @endforeach                   
                 </tbody>
             </table>
         </div>

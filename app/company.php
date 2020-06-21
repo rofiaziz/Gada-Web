@@ -12,6 +12,10 @@ class company extends Model
 
     public function user()
     {
-    	return $this->hasOne('App\User');
+    	return $this->hasMany('App\User');
+    }
+    public function satpam()
+    {
+        return $this->hasMany('App\satpam');
     }
 }

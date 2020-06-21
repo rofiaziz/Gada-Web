@@ -61,9 +61,8 @@ Route::get('/Satpam/AccountSatpam','SatpamController@account');
 Route::get('/Satpam/ListofSatpam','SatpamController@index');
 Route::get('/Satpam/RequestSatpam','SatpamController@request');
 
-Route::get('/Satpam/DeploymentSatpam', function (){
-    return view('Satpam/DeploymentSatpam');
-});
+Route::get('/Satpam/DeploymentSatpam', 'SatpamController@deploy');
+
     // Satpam CRUD
 
 
@@ -73,15 +72,11 @@ Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');
 
-Route::get('/Message/Write', function(){
-    return view('Message/Write');
-});
+
 Route::get('/Message/Inbox', function(){
     return view('Message/Inbox');
 });
-Route::get('/Message/Outbox', function(){
-    return view('Message/Outbox');
-});
+
 
 
 
