@@ -11,12 +11,16 @@ class attendance extends Model
 
     public function satpam()
     {
-    	return $this->belongsTo('App\satpam');
+    	return $this->belongsTo('App\satpam','satpam_id','id');
     }
 
     public function client()
     {
     	return $this->belongsTo('App\Client');
+    }
+    public function schedule()
+    {
+    	return $this->belongsTo('App\schedule','schedule_id','id');
     }
 }
 

@@ -11,18 +11,15 @@
 <div class="row">
     <div class="col-md-12" style="background-color:#CCD4D4; padding-top:5px; padding-bottom:10px; border-radius:30px">
         <!-- DATA TABLE -->
-        <h3 class="title-5 m-b-35" style="font-family: 'Abril Fatface'; font-size:45px;margin-left:12px; margin-top:12px">Penempatan Satpam</h3>
+        <h3 class="title-5 m-b-35" style=" font-size:45px;margin-left:12px; margin-top:12px">
+            <i class="zmdi zmdi-account-calendar" ></i>
+            <b>Penempatan Satpam</b></h3>
+        </h3>
         <div class="table-data__tool">
             <div class="table-data__tool-right">
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>nambah satpam</button>
+                
                 <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                    <select class="js-select2" name="type">
-                        <option selected="selected">Export</option>
-                        <option value="">Option 1</option>
-                        <option value="">Option 2</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
+                   
                 </div>
             </div>
         </div>
@@ -44,13 +41,13 @@
                     @foreach ($satpam as $s)
                     <tr class="tr-shadow">
                         
-                        <td> {{$s ->profils['Name'] }}</td>
+                        <td> {{$s ->profils->Name}}</td>
                         <td>
                             <span class="block-email">{{ $s -> email }}</span>
                         </td>
                         
                         {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td> --}}
-                        <td class="desc">{{ $s -> client['name'] }}</td>
+                        <td class="desc">{{ $s -> client->name }}</td>
                         <td>
                             <span class="status--active">Aktif</span>
                         </td>

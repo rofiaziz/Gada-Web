@@ -58,10 +58,17 @@ Route::group(['middleware' => ['CheckRole:admin,outsourcing']], function () {
 // Satpam
     //Satpam Get
 Route::get('/Satpam/AccountSatpam','SatpamController@account');
-Route::get('/Satpam/ListofSatpam','SatpamController@index');
+Route::get('/Satpam/ListofSatpam/{role}','SatpamController@index')->name('listsatpam')->middleware(['user']);
 Route::get('/Satpam/RequestSatpam','SatpamController@request');
+Route::get('/Satpam/attendance/{role}', 'SatpamController@attendance')->name('attendance')->middleware(['user']);
+Route::get('/Satpam/DeploymentSatpam/{role}', 'SatpamController@deploy')->name('deploy')->middleware(['user']);
 
-Route::get('/Satpam/DeploymentSatpam', 'SatpamController@deploy');
+Route::get('/Satpam/schedule/{role}','SatpamController@schedule')->name('schedule')->middleware(['user']);
+Route::get('/Satpam/Addschedule','SatpamController@addschedule');
+Route::post('/Satpam/Addschedule/store/{role}', 'SatpamController@store')->name('addschedule')->middleware(['user']);
+Route::get('/Satpam/Addschedule/edit/{id}','SatpamController@editschedule');
+Route::post('/Satpam/Addschedule/update/{id}','SatpamController@update');
+Route::get('/Satpam/Addschedule/delete/{id}','SatpamController@deleteschedule');
 
     // Satpam CRUD
 

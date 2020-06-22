@@ -38,8 +38,8 @@
                             </th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th>Perusahaan</th>
-                            <th>Level</th>
+                            {{-- <th>Perusahaan</th>
+                            <th>Level</th> --}}
                             <th>Status</th>
                             <th></th>
                         </tr>
@@ -59,8 +59,8 @@
                             <td>
                                 <span class="block-email">{{ $p-> email }}</span>
                             </td>
-                            <td class="desc">Garuda:</td>
-                            <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td>
+                            {{-- <td class="desc">Garuda:</td>
+                            <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td> --}}
                             <td>
                                 <span class="status--warning">Belum Aktif</span>
                             </td>

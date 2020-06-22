@@ -206,20 +206,28 @@
                                 <a class="js-arrow" href="#">
                                     <i class="fas fa-table"></i>Satpam</a>
                                     <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                        {{-- <li>
-                                            <a href="{{ url('/Satpam/RequestSatpam')}}">Permintaan</a>
+                                        <li><?php
+                                            $parameter= Crypt::encrypt(Auth::user()->id);
+                                        ?>
+                                            <a href="{{ route('schedule',$parameter)}}">Jadwal Kehadiran</a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
                                         </li> --}}
-                                        <li>
-                                            <a href="{{ url('/Satpam/ListofSatpam')}}">Daftar Satpam</a>
+                                        <li><?php
+                                            $parameter= Crypt::encrypt(Auth::user()->id);
+                                        ?>
+                                            <a href="{{ route('listsatpam',$parameter)}}">Daftar Satpam</a>
                                         </li>
-                                        {{-- <li>
-                                            <a href="{{ url('/Satpam/Tracking')}}">Tracking</a>
-                                        </li> --}}
-                                        <li>
-                                            <a href="{{ url('/Satpam/DeploymentSatpam')}}">Deployment</a>
+                                        <li><?php
+                                            $parameter= Crypt::encrypt(Auth::user()->id);
+                                        ?>
+                                            <a href="{{ route('attendance',$parameter)}}">Kehadiran</a>
+                                        </li>
+                                        <li><?php
+                                            $parameter= Crypt::encrypt(Auth::user()->id);
+                                        ?>
+                                            <a href="{{ route('deploy',$parameter)}}">Deployment</a>
                                         </li>
                                     </ul>
                             </li>

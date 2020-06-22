@@ -36,7 +36,7 @@
                         <th><b style="color: whitesmoke">Nama Satpam</b></th>
                         <th><b style="color: whitesmoke">Email</b></th>
                         <th><b style="color: whitesmoke">Alamat</b></th>
-                        <th><b style="color: whitesmoke">Strata</b></th>
+                        {{-- <th><b style="color: whitesmoke">Strata</b></th> --}}
                         <th><b style="color: whitesmoke">Jenis Kelamin</b></th>
                         
                     </tr>
@@ -46,11 +46,24 @@
                     @foreach ($satpam as $p)
 
                     <tr>
-                        <td><p style="color: black">{{ $p-> name }} </p></td>
+                        <td><p style="color: black">{{ $p->profils->Name }} </p></td>
                         <td><p style="color: black">{{ $p-> email }}</td>
-                        <td><p style="color: black">{{ $p-> acc_state}}</td>
-                        <td><p style="color: black">Master</span></td>
-                        <td><p style="color: black">{{ $p-> jenis_kelamin }}</td>
+                        <td><p style="color: black">{{ $p-> profils->Address}}</td>
+                        {{-- <td><p style="color: black">Master</span></td> --}}
+                        <td>
+                            <p style="color: black"><?php
+                                if ( $p->profils->Gender ==1){
+                                    echo "Pria";
+                                }
+                                elseif( $p->profils->Gender ==2) {
+                                    echo "Wanita";
+                                }
+                                else{
+                                    echo "Yang Lain";
+                                }
+                                
+                                ?></p>
+                        </td>
                     </tr>
                    
                     @endforeach                   

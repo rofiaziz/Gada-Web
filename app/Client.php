@@ -18,7 +18,7 @@ class Client extends Model
 
     public function schedule()
     {
-    	return $this->hasOne('App\schedule');
+    	return $this->belongsTo('App\schedule');
     }
 
     public function attendance()

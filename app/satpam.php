@@ -25,7 +25,7 @@ class satpam extends Model
 
     public function schedule()
     {
-    	return $this->hasOne('App\schedule');
+    	return $this->belongsTo('App\schedule');
     }
     public function client()
     {
@@ -38,6 +38,6 @@ class satpam extends Model
 
     public function profils()
     {
-    	return $this->hasOne('App\profilesatpam',);
+    	return $this->belongsTo('App\profilesatpam','profile_id','id');
     }
 }
