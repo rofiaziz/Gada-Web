@@ -201,19 +201,26 @@
                             </li>
                             @endif
                        
-                        
+                            @if (auth()->user()->role != '') 
                             <li class="has-sub">
                                 <a class="js-arrow" href="#">
                                     <i class="fas fa-table"></i>Satpam</a>
                                     <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                        <li><?php
-                                            $parameter= Crypt::encrypt(Auth::user()->id);
-                                        ?>
-                                            <a href="{{ route('schedule',$parameter)}}">Jadwal Kehadiran</a>
-                                        </li>
-                                        {{-- <li>
-                                            <a href="{{ url('/Satpam/AccountSatpam')}}">Akun</a>
-                                        </li> --}}
+                                        
+                                        @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'outsourcing'))
+                                        
+                                            <li><?php
+                                                $parameter= Crypt::encrypt(Auth::user()->id);
+                                            ?>
+                                                <a href="{{ route('request',$parameter)}}">Permintaan Aktivasi</a>
+                                            </li>
+                                            <li><?php
+                                                $parameter= Crypt::encrypt(Auth::user()->id);
+                                            ?>
+                                                <a href="{{ route('deploy',$parameter)}}">Deployment</a>
+                                            </li>
+                                        @endif
+
                                         <li><?php
                                             $parameter= Crypt::encrypt(Auth::user()->id);
                                         ?>
@@ -227,11 +234,11 @@
                                         <li><?php
                                             $parameter= Crypt::encrypt(Auth::user()->id);
                                         ?>
-                                            <a href="{{ route('deploy',$parameter)}}">Deployment</a>
+                                            <a href="{{ route('schedule',$parameter)}}">Jadwal Kehadiran</a>
                                         </li>
                                     </ul>
                             </li>
-                        
+                            @endif
                         @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'outsourcing'))
                                                     
                             <li class="has-sub">

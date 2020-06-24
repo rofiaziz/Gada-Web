@@ -35,7 +35,7 @@
                     @foreach ($satpam as $s)
                     <tr class="tr-shadow">
                         
-                        <td style="color: black"> {{$s ->profils->Name}}</td>
+                        <td style="color: black"> {{$s ->profils['Name']}}</td>
                         <td style="color: black">
                             <span >{{ $s -> client->name }}</span>
                         </td>

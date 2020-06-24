@@ -47,7 +47,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($schedule as $s)
+              
+                    
+                @foreach ($schedule as $s)
                     <tr class="tr-shadow">
                         
                         <td style="color: black"> 
@@ -81,7 +83,11 @@
                         
                     </tr>
                     <tr class="spacer"></tr>
-                  @endforeach                   
+                   
+                
+                  @endforeach 
+                   
+                            
                 </tbody>
             </table>
         </div>

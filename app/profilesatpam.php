@@ -10,6 +10,6 @@ class profilesatpam extends Model
 
     public function satpam()
     {
-    	return $this->hasOne('App\satpam');
+    	return $this->belongsTo('App\satpam');
     }
 }

@@ -41,11 +41,12 @@
                             {{-- <th>Perusahaan</th>
                             <th>Level</th> --}}
                             <th>Status</th>
-                            <th></th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($req as $p)
+                        
+                        @foreach ($company as $p)
                             
                      
                         <tr class="tr-shadow">
@@ -55,9 +56,9 @@
                                     <span class="au-checkmark"></span>
                                 </label> --}}
                             </td>
-                            <td>{{ $p-> name }}</td>
+                            <td>{{ $p-> Name }}</td>
                             <td>
-                                <span class="block-email">{{ $p-> email }}</span>
+                                <span class="block-email">{{ $p->user['email'] }}</span>
                             </td>
                             {{-- <td class="desc">Garuda:</td>
                             <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td> --}}
@@ -66,18 +67,11 @@
                             </td>
                             <td>
                                 <div class="table-data-feature">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                        <i class="zmdi zmdi-mail-send"></i>
-                                    </button>
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <a href="/Outsourcing/Edit/{{ $p->id }}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Ubah dan Terima">
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                        <i class="zmdi zmdi-delete"></i>
-                                    </button>
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                        <i class="zmdi zmdi-more"></i>
-                                    </button>
+                                </a>
                                 </div>
                             </td>
                         </tr>

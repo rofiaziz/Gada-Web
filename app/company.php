@@ -18,4 +18,9 @@ class company extends Model
     {
         return $this->hasMany('App\satpam');
     }
+
+    public function package()
+    {
+        return $this->hasOne('App\package','id_package','id');
+    }
 }

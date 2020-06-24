@@ -16,7 +16,7 @@
                     <tr>
                         
                         <td><b style="font-size:20px; color: black">Nama</td>
-                        <td><b style="font-size:20px; color: black">Strata</td>
+                        {{-- <td><b style="font-size:20px; color: black">Strata</td> --}}
                         <td><b style="font-size:20px; color: black">Alamat</td>
                         <td><b style="font-size:20px; color: black">Status</td>
                         <td><b style="font-size:20px; color: black">Aksi</td>
@@ -30,30 +30,34 @@
                         
                         <td>
                             <div class="table-data__info">
-                                <p style="color: black">{{ $row -> name }}</p>
+                                <p style="color: black">{{ $row->profils->Name }}</p>
                                 <span>
                                     <a href="#">{{ $row -> email }}</a>
                                 </span>
                             </div>
                         </td>
-                        <td>
+                        {{-- <td>
                             <p style="color: black"> Master
-                        </td>
+                        </td> --}}
                         <td>
-                            <p style="color: black"> {{ $row -> acc_state }}
+                            <p style="color: black"> {{ $row -> profils->Address }}
                         </td>
                         <td>
                             <span class="role admin">Belum Aktif</h5></span>
                         </td>
                         <td>
                             <div class="table-data-feature">
+                                
+                                <a href="/Satpam/RequestSatpam/edit/{{ $row->id }}">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Terima">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
+                                </a>
+                                <a href="/Satpam/RequestSatpam/delete/{{ $row->id }}">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
                                 </button>
-                                
+                                </a>
                             </div>
                         </td>
                     </tr>

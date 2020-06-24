@@ -1,7 +1,7 @@
 @extends('/Layouts/MasterLayouts')
 
 @section('Title')
-    <title>GadaMaxima - Penempatan Satpam</title>
+    <title>GadaMaxima - Daftar Paket</title>
 @endsection
 
 @section('ExtraFont')
@@ -13,7 +13,7 @@
         <!-- DATA TABLE -->
         <h3 class="title-5 m-b-35" style=" font-size:45px;margin-left:12px; margin-top:12px">
             <i class="zmdi zmdi-account-calendar" ></i>
-            <b>Penempatan Satpam</b></h3>
+            <b>Daftar Paket</b></h3>
         </h3>
         <div class="table-data__tool">
             <div class="table-data__tool-right">
@@ -29,37 +29,42 @@
                 <thead>
                     <tr>
                         
-                        <th>Nama</th>
-                        <th>Email</th>
+                        <th>Nama Paket</th>
+                        <th>Batas Jumlah Satpam</th>
                         {{-- <th>Strata</th> --}}
-                        <th>Perusahaan Penempatan</th>
-                        <th>Status</th>
+                        <th>Biaya Tagihan</th>
+                        <th>Detail Paket</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($satpam as $s)
+                    @foreach ($paket as $s)
                     <tr class="tr-shadow">
                         
-                        <td> {{$s ->profils->Name}}</td>
+                        <td  > 
+                            <span style="color: black" class="block-email">{{$s ->package_name}}</span>
+                        </td>
                         <td>
-                            <span class="block-email">{{ $s -> email }}</span>
+                            <span style="color: black" class="block-email">{{ $s -> Security_Count }}</span>
                         </td>
                         
                         {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td> --}}
-                        <td class="desc">{{ $s -> client->name }}</td>
+                        <td class="desc">{{ $s -> Bills }}</td>
                         <td>
-                            <span class="status--active">Aktif</span>
+                        <textarea name="" id="" >{{$s->Detail}}</textarea>
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
+                                <a href="/Package/edit/{{$s->id_package}}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <i class="zmdi zmdi-edit"></i>
+                                </a>    
                                 </button>
+                                <a href="/Package/delete/{{$s->id_package}}">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
                                 </button>
+                                </a>
                                 
                             </div>
                         </td>

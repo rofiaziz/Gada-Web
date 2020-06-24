@@ -43,7 +43,7 @@
                             {{-- <th>Perusahaan</th> --}}
                             <th>Level</th>
                             <th>Status</th>
-                            <th></th>
+                            {{-- <th></th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -62,11 +62,11 @@
                                 <span class="block-email">{{ $p-> email }}</span>
                             </td>
                             {{-- <td class="desc">Garuda:</td> --}}
-                            <td><span class="role cabang" style="text-align:center; line-height:1.5;">Admin Cabang</span></td>
+                            <td><span class="role cabang" style="text-align:center; line-height:1.5;">Outsourcing</span></td>
                             <td>
                                 <span class="status--active">Aktif</span>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <div class="table-data-feature">
                                     <a href="/Outsourcing/Edit/{{ $p->id }}">
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -79,7 +79,7 @@
                                         </button>
                                     </a>
                                 </div>
-                            </td>
+                            </td> --}}
                         </tr>
                         <tr class="spacer"></tr>
                         @endforeach

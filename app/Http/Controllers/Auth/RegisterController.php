@@ -6,7 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\company;
 class RegisterController extends Controller
 {
     /*
@@ -50,7 +52,14 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            // 'password' => 'required|string|min:6|confirmed',
+            'city' => 'required',
+            'about' => 'required',
+            'address' => 'required',
+            'time'  => 'required|integer',
+            'satpam' => 'required|integer',
+            'email' => 'required|string|email|max:255|unique:users',
+            'client' => 'required|integer'
         ]);
     }
 
@@ -62,11 +71,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        company::create([
+            'Name' => $data['name'],
+            'City' => $data['city'],
+            'About' => $data['about'],
+            'Address' => $data['address'],
+            'id_paket' => '0',
+            'Client_count' => $data['client'],
+            'Satpam_count' => $data['satpam'],
+            'masa_berlangganan' => $data['time']
+        ]);
+        $company = company::where('name' , $data['name'])->first();
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'company_id' => '1',
-            'password' => bcrypt($data['password']),
+            'company_id' => $company->id,
+            'password' => bcrypt($data['name']),
         ]);
     }
 }

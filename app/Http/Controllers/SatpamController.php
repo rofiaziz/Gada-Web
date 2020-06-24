@@ -12,6 +12,7 @@ use App\profilesatpam;
 use App\User;
 use App\attendance;
 use App\schedule;
+use App\package;
 
 class SatpamController extends Controller
 {
@@ -36,14 +37,18 @@ class SatpamController extends Controller
            
         }
         elseif($nitip->role  == 'outsourcing'){
-            $satpam = satpam::where('outsourcing_id' , $nitip->company_id)
+            $satpam = satpam::where(array('outsourcing_id' =>$nitip->company_id, 'acc_state' => '1'))
+            
             ->get();
-           
-            return view('/Satpam/ListofSatpam',['satpam' => $satpam]);
+           $count= $satpam->count();
+            $company = company::where('id' , $nitip->company_id)
+            ->get();
+
+            return view('/Satpam/ListofSatpam',['satpam' => $satpam,'count' => $count,'company'=>$company]);
 
         }elseif($nitip->role == 'client'){
+            $satpam = satpam::where(array('client_id' =>$nitip->client_id, 'acc_state' => '1'))
             
-            $satpam = satpam::where('client_id' , $nitip->client_id)
             ->get();
             return view('/Satpam/ListofSatpam',['satpam' => $satpam]);
         }
@@ -87,6 +92,7 @@ class SatpamController extends Controller
     }
 
     public function attendance($role){
+        $satpam= array();
         $data = Crypt::decrypt($role);
         $nitip=User::findOrFail($data);
 
@@ -98,14 +104,14 @@ class SatpamController extends Controller
            
         }
         elseif($nitip->role  == 'outsourcing'){
-            $satpam = satpam::where('outsourcing_id' , $nitip->company_id)
-            ->first();
+            $satpam = satpam::where(array('outsourcing_id' =>$nitip->company_id, 'acc_state' => '1'))
+            ->get();
            
             return view('/Satpam/Attendance',['satpam' => $satpam] );
 
         }elseif($nitip->role == 'client'){
             
-            $satpam = satpam::where('client_id' , $nitip->client_id)
+            $satpam = satpam::where(array('client_id' =>$nitip->client_id, 'acc_state' => '1'))
             ->get();
             return view('/Satpam/Attendance',['satpam' => $satpam] );
         }
@@ -151,6 +157,8 @@ class SatpamController extends Controller
 
 
     public function schedule( $role){
+        $schedule= array();
+        
         $data = Crypt::decrypt($role);
         $nitip=User::findOrFail($data);
         if ($nitip->role =='admin') {
@@ -162,14 +170,15 @@ class SatpamController extends Controller
         }
         elseif($nitip->role  == 'outsourcing'){
             $schedule = schedule::where('id_company' , $nitip->company_id)
-            ->first();
-           
+            ->get();
+            
             return view('/Satpam/schedule',['schedule' => $schedule] );
 
         }elseif($nitip->role == 'client'){
             
             $schedule = schedule::where('id_client' , $nitip->client_id)
             ->get();
+            
             return view('/Satpam/schedule',['schedule' => $schedule] );
         }
         
@@ -217,6 +226,65 @@ class SatpamController extends Controller
             return back();
     }
 
+    
 
+    public function request($role){
+        $satpam= array();
+        $data = Crypt::decrypt($role);
+        $nitip=User::findOrFail($data);
+
+        if ($nitip->role =='admin') {
+           
+            $satpam = satpam::where('acc_state' , '0')->get();
+
+            return view('/Satpam/RequestSatpam',['satpam' => $satpam]);
+           
+        }
+        elseif($nitip->role  == 'outsourcing'){
+            $satpam = satpam::where(array('outsourcing_id' =>$nitip->company_id, 'acc_state' => '0'))
+            ->get();
+            
+            return view('/Satpam/RequestSatpam',['satpam' => $satpam]);
+        }
+           
+        
+       
+    }
+
+    public function editreq( $id){
+        
+        $data = satpam::find($id)->first();
+        $nitip= satpam::where(array('outsourcing_id' =>$data->company_id, 'acc_state' => '1'))
+        ->get();
+        $limit=$nitip->count();
+
+        $company = company::where('id',$data->outsourcing_id)
+        ->first();
+        $coba = package::where('id_package' , $company->id_paket)
+        ->first();
+        $paket = $coba->Security_Count;
+
+
+        if ( $limit >= $paket ) {
+           return redirect('home');
+        }else{
+        DB::table('satpam')
+        ->where('id', $id)
+        ->update([
+           'acc_state' => '1',
+        ]);
+       return redirect('/Message/Inbox');   
+    }
+    }
+
+    public function deletereq($id){
+       
+        DB::table('satpam')
+        ->where('id', $id)
+        ->update([
+            'acc_state' => '0',
+         ]);
+       return redirect('home');   
+    }
 
 }

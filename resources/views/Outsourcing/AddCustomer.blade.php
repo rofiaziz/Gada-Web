@@ -114,7 +114,7 @@
                               </div>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                               <div class="form-group">
                                 <h5 label>Jenis Paket </label>
                                   <div class="col col-md-9">
@@ -134,6 +134,14 @@
                                         @endforeach
                                     </div>
                                 </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-8 ">
+                              <div class="form-group">
+                                
+                                <input  class="form-control" name="role" placeholder="Perusahaan Bank" maxlength="25" hidden value="outsourcing">
+                                   
                               </div>
                             </div>
                            

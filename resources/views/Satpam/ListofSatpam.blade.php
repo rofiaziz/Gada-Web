@@ -11,21 +11,29 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h3 class="title-3 m-b-30" style="font-size:45px;" >
                     <i class="zmdi zmdi-account-calendar" ></i>
                     <b>Daftar Satpam</b></h3>
             </div>
-            {{-- <div class="col-md-6">
-                <form class="form-header" action="" method="POST">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cari Perusahaan" aria-label="Cari-Perusahaan" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                        </div>
-                      </div>
-                </form>
-            </div> --}}
+            <div class="table-data__tool col-md-6">
+                <div class="table-data__tool-right">
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+
+                        <i style="color: rgba(0, 0, 0, 0.719)"><b>Jumlah Satpam : {{$count}}</b></i>
+                   
+                </div>
+            </div>
+            <div class="table-data__tool col-md-6">
+                <div class="table-data__tool-right">
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                        @foreach ($company as $item)
+                            
+                        
+                        <i style="color: rgba(0, 0, 0, 0.719)"><b>Batas Maksimal Satpam : {{$item->package->Security_Count}}</b></i>
+                        @endforeach
+                </div>
+            </div>
         </div>
         <!-- DATA TABLE-->
         
@@ -38,6 +46,7 @@
                         <th><b style="color: whitesmoke">Alamat</b></th>
                         {{-- <th><b style="color: whitesmoke">Strata</b></th> --}}
                         <th><b style="color: whitesmoke">Jenis Kelamin</b></th>
+                        <th><b style="color: whitesmoke">Aksi</b></th>
                         
                     </tr>
                 </thead>
@@ -64,8 +73,17 @@
                                 
                                 ?></p>
                         </td>
+                        <td>
+                            <div class="table-data-feature">
+                                <a href="/Satpam/RequestSatpam/delete/{{ $p->id }}">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </button>
+                                </a>
+                            </div>
+                        </td>
                     </tr>
-                   
+                    
                     @endforeach                   
                 </tbody>
             </table>

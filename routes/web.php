@@ -19,6 +19,7 @@ Route::group(['middleware' => ['CheckRole:admin']], function () {
     Route::get('/Outsourcing/ListofCustomer','OutsourcingController@index');
     Route::get('/Outsourcing/Account','OutsourcingController@account');
     Route::get('/Outsourcing/Request','OutsourcingController@request');
+    Route::get('/Outsourcing/Request/{id}','OutsourcingController@requestacc');
 
     Route::post('/Outsourcing/store','OutsourcingController@store');
     Route::get('/Outsourcing/Add','OutsourcingController@add');
@@ -59,7 +60,10 @@ Route::group(['middleware' => ['CheckRole:admin,outsourcing']], function () {
     //Satpam Get
 Route::get('/Satpam/AccountSatpam','SatpamController@account');
 Route::get('/Satpam/ListofSatpam/{role}','SatpamController@index')->name('listsatpam')->middleware(['user']);
-Route::get('/Satpam/RequestSatpam','SatpamController@request');
+Route::get('/Satpam/RequestSatpam/{role}','SatpamController@request')->name('request')->middleware(['user']);
+Route::get('/Satpam/RequestSatpam/edit/{id}','SatpamController@editreq');
+Route::get('/Satpam/RequestSatpam/delete/{id}','SatpamController@deletereq');
+
 Route::get('/Satpam/attendance/{role}', 'SatpamController@attendance')->name('attendance')->middleware(['user']);
 Route::get('/Satpam/DeploymentSatpam/{role}', 'SatpamController@deploy')->name('deploy')->middleware(['user']);
 
@@ -85,7 +89,18 @@ Route::get('/Message/Inbox', function(){
 });
 
 
+// paket
 
+Route::group(['middleware' => ['CheckRole:admin']], function () {
+
+    Route::get('/Package/paket', 'PaketController@index');
+    Route::get('/Package/add', 'PaketController@add');
+    Route::get('/Package/edit/{id}', 'PaketController@edit');
+    Route::get('/Package/delete/{id}', 'PaketController@delete');
+    Route::post('/Package/store', 'PaketController@store');
+    Route::post('/Package/update/{id}', 'PaketController@update');
+
+});
 
 
 

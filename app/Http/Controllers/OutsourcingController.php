@@ -44,11 +44,20 @@ class OutsourcingController extends Controller
     }
 
     public function request(){
-        $req = DB::table('users')
-        ->select('id','name','email')
-        // ->whereid_status(2)
+        $company=array();
+        $company = company::where('id_paket','0')
         ->get();
-        return view('/Outsourcing/Request',compact(['req']));
+        
+        return view('/Outsourcing/Request',['company' => $company]);
+        
+    }
+
+    public function requestacc($id){
+       
+        $user = user::where('company_id' , $id)->first();
+        $user->role='outsourcing';
+        $user->save();
+        return view('/Outsourcing/Request');
         
     }
 
@@ -107,7 +116,9 @@ class OutsourcingController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'company_id' => $company->id,
+            'role' => $request->role,
             'password' => bcrypt($request->password)
+            
         ]);
 
 
@@ -155,10 +166,11 @@ class OutsourcingController extends Controller
         $company->masa_berlangganan = $request->time;
         $company->save();
 
-        $user = user::where('company_id' , $id)->first();
+        $user = user::where('company_id','=' , $id)->first();
 
         $user->    name  = $request->name;
         $user->    email = $request->email;
+        $user->    role = $request->role;
         $user->    password = bcrypt($request->password);
         $user->save();
 
