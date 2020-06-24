@@ -240,16 +240,18 @@
                             </li>
                             @endif
                         @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'outsourcing'))
-                                                    
+                               
                             <li class="has-sub">
                                 <a class="js-arrow" href="#">
                                     <i class="fas fa-table"></i>Klien</a>
                                     <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                        <li>
-                                            <a href="{{ url('/ListofClient')}}">Daftar Klien</a>
+                                        <li><?php
+                                            $parameter= Crypt::encrypt(Auth::user()->id);
+                                        ?>
+                                            <a href="{{ route('listclient',$parameter)}}">Daftar Klien</a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('/AddClient')}}">Tambah Klien</a>
+                                            <a href="{{ route('addclient')}}">Tambah Klien</a>
                                         </li>
                                         {{-- <li>
                                             <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>

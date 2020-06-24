@@ -40,12 +40,12 @@ Route::group(['middleware' => ['CheckRole:admin']], function () {
 Route::group(['middleware' => ['CheckRole:admin,outsourcing']], function () {
     
 
-    Route::get('/AccountofClient', 'ClientController@account');
-    Route::get('/ListofClient', 'ClientController@index');
+    Route::get('/AccountofClient/{role}', 'ClientController@account')->name('akunclient')->middleware(['user']);
+    Route::get('/ListofClient{role}', 'ClientController@index')->name('listclient')->middleware(['user']);
 
 
-    Route::get('/AddClient','ClientController@add');
-    Route::post('/Client/store','ClientController@store');
+    Route::get('/AddClient','ClientController@add')->name('addclient');
+    Route::post('/Client/store/{role}','ClientController@store')->middleware(['user']);
 
     Route::get('/Client/Edit/{id}','ClientController@edit');
     Route::post('/Client/Update/{id}','ClientController@update');

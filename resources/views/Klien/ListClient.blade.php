@@ -41,10 +41,10 @@
 
                     <tr>
                         <td>{{ $p-> name }}</td>
-                        <td>{{ $p-> location }}</td>
-                        <td>{{ $p-> valid_since}}</td>
+                        <td>{{ $p->Client->location }}</td>
+                        <td>{{ $p->Client->valid_since}}</td>
                         {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">p-> jumlah_client }}</span></td> --}}
-                        <td>{{ $p-> security_active }}</td>
+                        <td>{{ $p->Client->security_active }}</td>
                     </tr>
                    
                     @endforeach                   

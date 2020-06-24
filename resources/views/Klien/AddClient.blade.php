@@ -35,19 +35,34 @@
                       <p class="card-title" style="text-align:center; font-size:25px; color: black;"><b>Tambah Klien Baru</b></p>
                     </div>
                     <div class="card-body">
-                      <form method="post" action="/Client/store">
+                      <?php
+                      $parameter= Crypt::encrypt(Auth::user()->id);
+                       ?> 
+                      <form method="post" action="/Client/store/{{$parameter}}">
 
                         {{ csrf_field() }}
 
                           <div class="row">
 
-                            <div class="col-md-12 ">
+                            <div class="col-md-6 ">
                               <div class="form-group">
                                 <h5 label>Nama Perusahaan Klien</label>
                                 <input type="text" name="name" class="form-control" placeholder="">
                                   @if($errors->has('name'))
                                   <div class="text-danger">
                                       {{ $errors->first('name')}}
+                                  </div>
+                                  @endif
+                              </div>
+                            </div>
+
+                            <div class="col-md-6 ">
+                              <div class="form-group">
+                                <h5 label>MoU</label>
+                                <input type="text" name="mou" class="form-control" placeholder="">
+                                  @if($errors->has('mou'))
+                                  <div class="text-danger">
+                                      {{ $errors->first('mou')}}
                                   </div>
                                   @endif
                               </div>
