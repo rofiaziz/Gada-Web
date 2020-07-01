@@ -275,10 +275,11 @@
                                     ?>
                                         <a href="{{ route('daftarkendaraan',$parameter)}}">Laporan Kendaraan</a>
                                     </li>
-                                    
-                                    {{-- <li>
-                                        <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
-                                    </li> --}}
+                                    <li><?php
+                                        $parameter= Crypt::encrypt(Auth::user()->id);
+                                    ?>
+                                        <a href="{{ route('daftartamu',$parameter)}}">Laporan Tamu</a>
+                                    </li>
                                 </ul>
                         </li>
                     @endif

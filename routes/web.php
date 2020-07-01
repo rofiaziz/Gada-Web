@@ -117,7 +117,7 @@ Route::group(['middleware' => ['CheckRole:admin,client']], function () {
 
     Route::get('/Laporan/kejadian/{role}', 'ReportController@accident')->name('daftarlaporan')->middleware(['user']);
     Route::get('/Laporan/vehicle/{role}', 'ReportController@vehicle')->name('daftarkendaraan')->middleware(['user']);
-
+    Route::get('/Laporan/guest/{role}', 'ReportController@guest')->name('daftartamu')->middleware(['user']);
 });
 
 

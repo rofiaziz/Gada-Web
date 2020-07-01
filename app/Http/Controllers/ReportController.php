@@ -10,6 +10,7 @@ use App\satpam;
 use App\vehicle;
 use App\accident;
 use App\User;
+use App\guest;
 
 
 class ReportController extends Controller
@@ -80,6 +81,36 @@ public function vehicle($role){
         
         ->get();
         return view('/Laporan/kendaraan',['vehicle' => $vehicle]);
+    }
+    
+   
+}   
+public function guest($role){
+    $data = Crypt::decrypt($role);
+    $nitip=User::findOrFail($data);
+
+    $vehicle=array();
+    if ($nitip->role =='admin') {
+       
+        $guest = guest::all();
+        
+        return view('/Laporan/tamu',['guest' => $guest]);
+       
+    }
+    // elseif($nitip->role  == 'outsourcing'){
+    //     $satpam = satpam::where(array('outsourcing_id' =>$nitip->company_id, 'acc_state' => '1'))
+        
+    //     ->get();
+      
+        
+
+    //     return view('/Laporan/kejadian',['accident' => $accident]);
+    // }
+    elseif($nitip->role == 'client'){
+        $guest = guest::where(array('id_client' =>$nitip->client_id))
+        
+        ->get();
+        return view('/Laporan/tamu',['guest' => $guest]);
     }
     
    

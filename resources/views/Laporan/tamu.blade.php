@@ -24,14 +24,16 @@
                         
                         <th>Nama Satpam</th>
                         <th>Kantor</th>
-                        <th>Insiden</th>
-                        <th>Tindak Lanjut</th>
-                        <th>File Gambar</th>
-                        <th>Unduh</th>
+                        <th>Alamat</th>
+                        <th>No Telp.</th>
+                        <th>Keperluan</th>
+                        <th>Perusahaan Tamu</th>
+                        <th>Foto</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($accident as $s)
+                    @foreach ($guest as $s)
                     <tr class="tr-shadow">
                         
                         <td style="color: black"> {{$s ->satpam->profils['Name']}}</td>
@@ -39,20 +41,12 @@
                             <span >{{ $s -> client->name }}</span>
                         </td>
                         <td style="color: black">
-                            <span >{{ $s -> Incident }}</span>
+                            <span >{{ $s -> address }}</span>
                         </td>
-                        <td style="color: black"> {{ $s -> Tindak_lanjut }}</td>
+                        <td style="color: black"> {{ $s -> phone_num }}</td>
+                        <td style="color: black"> {{ $s -> requirement }}</td>
+                        <td style="color: black"> {{ $s -> company }}</td>
                         <td> <img src="file_attachment/fetch_image{{ $s -> id }}" width="75"></td>
-                        {{-- <td > 
-                            <div class="table-data-feature">
-                                <a href="">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Unduh">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                </a>
-                            </div>
-                        </td> --}}
-                        
                         
                     </tr>
                     <tr class="spacer"></tr>
