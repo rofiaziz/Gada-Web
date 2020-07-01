@@ -29,8 +29,8 @@ class ClientController extends Controller
         
         if ($nitip->role =='admin') {
            
-            $List = user::where('role','client');
-
+            $List = user::where(array( 'role' => 'client'))
+            ->get();
             return view('/Klien/ListClient',['List' => $List] );
            
         }

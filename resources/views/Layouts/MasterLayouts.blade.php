@@ -259,6 +259,29 @@
                                     </ul>
                             </li>
                         @endif
+                        @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'client'))
+                               
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-table"></i>Laporan Satpam</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li><?php
+                                        $parameter= Crypt::encrypt(Auth::user()->id);
+                                    ?>
+                                        <a href="{{ route('daftarlaporan',$parameter)}}">Laporan Kejadian</a>
+                                    </li>
+                                    <li><?php
+                                        $parameter= Crypt::encrypt(Auth::user()->id);
+                                    ?>
+                                        <a href="{{ route('daftarkendaraan',$parameter)}}">Laporan Kendaraan</a>
+                                    </li>
+                                    
+                                    {{-- <li>
+                                        <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
+                                    </li> --}}
+                                </ul>
+                        </li>
+                    @endif
                     
                         <li class="has-sub">
                             <a class="js-arrow" href="{{ url('/Message/Inbox')}}">

@@ -111,7 +111,14 @@ Route::get('/Forgot-passwd',function(){
 });
 
 
+//Laporan
+Route::group(['middleware' => ['CheckRole:admin,client']], function () {
+    
 
+    Route::get('/Laporan/kejadian/{role}', 'ReportController@accident')->name('daftarlaporan')->middleware(['user']);
+    Route::get('/Laporan/vehicle/{role}', 'ReportController@vehicle')->name('daftarkendaraan')->middleware(['user']);
+
+});
 
 
 

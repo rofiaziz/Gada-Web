@@ -32,7 +32,7 @@ class SatpamController extends Controller
         if ($nitip->role =='admin') {
            
             $satpam = satpam::all();
-
+            
             return view('/Satpam/ListofSatpam',['satpam' => $satpam]);
            
         }

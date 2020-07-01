@@ -16,24 +16,29 @@
                     <i class="zmdi zmdi-account-calendar" ></i>
                     <b>Daftar Satpam</b></h3>
             </div>
-            <div class="table-data__tool col-md-6">
-                <div class="table-data__tool-right">
-                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+            @if (auth()->user()->role == 'outsourcing')
+                <div class="table-data__tool col-md-6">
+                    <div class="table-data__tool-right">
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
 
-                        <i style="color: rgba(0, 0, 0, 0.719)"><b>Jumlah Satpam : {{$count}}</b></i>
-                   
+                            <i style="color: rgba(0, 0, 0, 0.719)"><b>Jumlah Satpam : {{$count}}</b></i>
+                    
+                    </div>
                 </div>
-            </div>
-            <div class="table-data__tool col-md-6">
-                <div class="table-data__tool-right">
-                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                        @foreach ($company as $item)
+                <div class="table-data__tool col-md-6">
+                    <div class="table-data__tool-right">
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                            @foreach ($company as $item)
+                                
                             
-                        
-                        <i style="color: rgba(0, 0, 0, 0.719)"><b>Batas Maksimal Satpam : {{$item->package->Security_Count}}</b></i>
-                        @endforeach
+                            <i style="color: rgba(0, 0, 0, 0.719)"><b>Batas Maksimal Satpam : {{$item->package->Security_Count}}</b></i>
+                            @endforeach
+                    </div>
                 </div>
-            </div>
+           
+                
+            @endif
+            
         </div>
         <!-- DATA TABLE-->
         
