@@ -80,10 +80,15 @@
                         </td>
                         <td>
                             <div class="table-data-feature">
+                                <a href="/Report/{{ $p->id }}">
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Laporan">
+                                        <i class="zmdi zmdi-assignment"></i>
+                                    </button>
+                                </a>
                                 <a href="/Satpam/RequestSatpam/delete/{{ $p->id }}">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
                                 </a>
                             </div>
                         </td>

@@ -145,14 +145,14 @@ class SatpamController extends Controller
             'check_in' => $request->time,
             'check_out' => $request->time1,
             'id_company' => $nitip->company_id,
-            'id_client' => $nitip->company_id,
+            'id_client' => $nitip->client_id,
             'id_satpam' => '0'
         ]);
 
         
 
 
-    	return redirect('/Satpam/Addschedule');
+    	return redirect('/Satpam/schedule');
     }
 
 

@@ -36,7 +36,7 @@
                     </div>
                     <div class="card-body">
                       <?php $parameter= Crypt::encrypt(Auth::user()->id);
-                                    ?>    
+                      ?>    
                       <form method="post" action="/Satpam/Addschedule/store/{{$parameter}}">
                         
                         {{ csrf_field() }}

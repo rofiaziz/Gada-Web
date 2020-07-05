@@ -259,7 +259,7 @@
                                     </ul>
                             </li>
                         @endif
-                        @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'client'))
+                        {{-- @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'client'))
                                
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -282,7 +282,7 @@
                                     </li>
                                 </ul>
                         </li>
-                    @endif
+                    @endif --}}
                     
                         <li class="has-sub">
                             <a class="js-arrow" href="{{ url('/Message/Inbox')}}">

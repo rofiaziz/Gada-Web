@@ -40,4 +40,17 @@ class satpam extends Model
     {
     	return $this->belongsTo('App\profilesatpam','profile_id','id');
     }
+
+    public function accident()
+    {
+    	return $this->hasMany('App\accident','id_satpam','id');
+    }
+    public function vehicle()
+    {
+    	return $this->hasMany('App\vehicle','id_satpam','id');
+    }
+    public function guest()
+    {
+    	return $this->hasMany('App\guest','id_satpam','id');
+    }
 }

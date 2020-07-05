@@ -74,6 +74,9 @@ Route::get('/Satpam/Addschedule/edit/{id}','SatpamController@editschedule');
 Route::post('/Satpam/Addschedule/update/{id}','SatpamController@update');
 Route::get('/Satpam/Addschedule/delete/{id}','SatpamController@deleteschedule');
 
+Route::get('/Report/{id}','ReportController@laporan');
+Route::get('/cetak/accident/{id}','ReportController@accident');
+Route::get('/cetak/guest/{id}','ReportController@guest');
     // Satpam CRUD
 
 
@@ -112,12 +115,10 @@ Route::get('/Forgot-passwd',function(){
 
 
 //Laporan
-Route::group(['middleware' => ['CheckRole:admin,client']], function () {
+Route::group(['middleware' => ['CheckRole:admin,outsourcing,client']], function () {
     
-
-    Route::get('/Laporan/kejadian/{role}', 'ReportController@accident')->name('daftarlaporan')->middleware(['user']);
-    Route::get('/Laporan/vehicle/{role}', 'ReportController@vehicle')->name('daftarkendaraan')->middleware(['user']);
-    Route::get('/Laporan/guest/{role}', 'ReportController@guest')->name('daftartamu')->middleware(['user']);
+    Route::get('/Laporan/{id}', 'ReportController@laporan')->name('daftarlaporan')->middleware(['user']);
+   
 });
 
 
@@ -125,5 +126,8 @@ Route::group(['middleware' => ['CheckRole:admin,client']], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 
 
