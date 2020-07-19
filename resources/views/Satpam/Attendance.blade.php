@@ -17,56 +17,41 @@
         </h3>
         
         <div class="table-responsive table-responsive-data2">
-            <table class="table table-data2">
+            <table class="table table-data2" id="dataTable">
                
                 <thead>
                     <tr>
                         
                         <th>Nama Satpam</th>
+                        <th>Outsourcing</th>
                         <th>Kantor</th>
                         <th>Tanggal</th>
-                        <th>Bulan</th>
-                        <th>Shift</th>
-                        <th>Check In</th>
-                        <th>Check Out</th>
+                        <th>Cek In</th>
+                        <th>Cek out</th>
+                        <th>Lattitude</th>
+                        <th>Longitude</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($satpam as $s)
+                    @foreach ($attendance as $s)
                     <tr class="tr-shadow">
                         
-                        <td style="color: black"> {{$s ->profils['Name']}}</td>
+                        <td style="color: black"> {{$s ->satpam->profils->Name}}</td>
+                        <td style="color: black"> {{$s ->company->Name}}</td>
                         <td style="color: black">
                             <span >{{ $s -> client->name }}</span>
                         </td>
-                        <td style="color: black"> 
-                            @foreach ($s ->attendance as $absen)
-                            {{$absen->Date}}
-                            
-                            @endforeach
-                        </td>
-                        <td style="color: black"> @foreach ($s ->attendance as $absen)
-                            {{$absen->Check_in}}
-                            
-                            @endforeach</td>
-                        <td style="color: black"> @foreach ($s ->attendance as $absen)
-                            {{$absen->Check_out}}
-                            
-                            @endforeach</td>
+                        <td style="color: black">{{$s->Date}} </td>
+                        <td style="color: black">{{$s->Check_in}}</td>
+                        <td style="color: black">{{$s->Check_out}}</td>
                         {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">Master</span></td> --}}
-                        <td class="desc">@foreach ($s ->attendance as $absen)
-                            {{$absen->CoordLat}}
-                            
-                            @endforeach</td>
+                        <td class="desc">{{$s->CoordLat}}</td>
                         <td>
-                            <span class="status--active">@foreach ($s ->attendance as $absen)
-                                {{$absen->CoordLang}}
-                                
-                                @endforeach</span>
+                            <span class="status--active">{{$s->CoordLang}}</span>
                         </td>
                         
                     </tr>
-                    <tr class="spacer"></tr>
+                   
                   @endforeach                   
                 </tbody>
             </table>

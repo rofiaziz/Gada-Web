@@ -20,7 +20,7 @@ class satpam extends Model
     }
     public function attendance()
     {
-    	return $this->hasMany('App\attendance');
+    	return $this->hasMany('App\attendance','satpam_id','id');
     }
 
     public function schedule()
@@ -38,7 +38,7 @@ class satpam extends Model
 
     public function profils()
     {
-    	return $this->belongsTo('App\profilesatpam','profile_id','id');
+    	return $this->belongsTo('App\profilesatpam','profile_id');
     }
 
     public function accident()

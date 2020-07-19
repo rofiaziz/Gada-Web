@@ -6,20 +6,27 @@
 @endsection 
 
 @section('layout')
-<div class="user-data m-b-30">
-        <h3 class="title-3 m-b-30" style="font-size:45px; color: black">
-            <i class="zmdi zmdi-account-calendar"></i><b style="color: black">Daftar Permintaan Akun Satpam</b></h3>
-        
-        <div class="table-responsive table-data">
-            <table class="table">
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title-3 m-b-30" style="font-size:45px;" >
+                    <i class="zmdi zmdi-account-calendar" ></i>
+                    <b>Daftar Satpam</b></h3>
+            </div>
+        </div>
+
+
+        <div class="table-responsive m-b-40">
+            <table class="table table-borderless table-data3" id="dataTable">
                 <thead>
                     <tr>
                         
-                        <td><b style="font-size:20px; color: black">Nama</td>
+                        <th><b style="color: whitesmoke">Nama</b></th>
                         {{-- <td><b style="font-size:20px; color: black">Strata</td> --}}
-                        <td><b style="font-size:20px; color: black">Alamat</td>
-                        <td><b style="font-size:20px; color: black">Status</td>
-                        <td><b style="font-size:20px; color: black">Aksi</td>
+                        <th><b style="color: whitesmoke">Alamat</b></th>
+                        <th><b style="color: whitesmoke">Status</b></th>
+                        <th><b style="color: whitesmoke">Aksi</b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,8 +73,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="user-data__footer">
-            <button class="au-btn au-btn-load">lihat Lebih</button>
-        </div>
+        
     </div>
+</div>    
 @endsection

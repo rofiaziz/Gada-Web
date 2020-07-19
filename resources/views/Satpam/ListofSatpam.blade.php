@@ -43,7 +43,7 @@
         <!-- DATA TABLE-->
         
         <div class="table-responsive m-b-40">
-            <table class="table table-borderless table-data3">
+            <table class="table table-borderless table-data3" id="dataTable">
                 <thead>
                     <tr >
                         <th><b style="color: whitesmoke">Nama Satpam</b></th>

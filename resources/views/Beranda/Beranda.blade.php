@@ -8,7 +8,7 @@
 {{-- Halaman Isi --}}
 @section('layout')
 
-<div class="row m-t-25">
+{{-- <div class="row m-t-25">
     <div class="col-sm-6 col-lg-3">
         <div class="overview-item overview-item--c1">
             <div class="overview__inner">
@@ -69,15 +69,15 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 {{-- Bagian Selamat Datang --}}
 
         <div class="overview-item overview-item--c6" style="background-color:white">
             <div class="overview__inner">
                 <div class="overview-box clearfix">
-                    <div class="text" style="height: 300px; " >
+                    <div class="text" style="height: 500px; " >
                         
-                    <h1 >Selamat Datang di Halaman Admin</h1>
+                    <h1 style="text-align: center">Selamat Datang di Halaman Admin</h1>
                     </div>                        
                 </div>
             </div>

@@ -77,9 +77,10 @@ Route::get('/Satpam/Addschedule/delete/{id}','SatpamController@deleteschedule');
 Route::get('/Report/{id}','ReportController@laporan');
 Route::get('/cetak/accident/{id}','ReportController@accident');
 Route::get('/cetak/guest/{id}','ReportController@guest');
-    // Satpam CRUD
 
-
+Route::get('/Report/accident/{role}', 'ReportController@accidentall')->name('daftarkejadian')->middleware(['user']);
+Route::get('/Report/guest/{role}', 'ReportController@guestall')->name('daftartamu')->middleware(['user']);
+Route::get('/Report/vehicle/{role}', 'ReportController@vehicleall')->name('daftarkendaraan')->middleware(['user']);
 //Message
 
 Route::get('/contacts', 'ContactsController@get');

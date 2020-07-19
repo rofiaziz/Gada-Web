@@ -29,27 +29,26 @@
                     </div> --}}
                 </div>
             </div>
-        </a>
+            </a>
         </h3>
         
         <div class="table-responsive table-responsive-data2">
-            <table class="table table-data2">
+            <table class="table table-data2" id="dataTable">
                
                 <thead>
                     <tr>
+                        
                         <th>Kantor</th>
                         <th>Tanggal</th>
                         <th>Bulan</th>
                         <th>Shift</th>
                         <th>Check In</th>
                         <th>Check Out</th>
-                        
+                        <th>Tindakan</th>
                     </tr>
                 </thead>
                 <tbody>
-              
-                    
-                @foreach ($schedule as $s)
+                    @foreach ($schedule as $s)
                     <tr class="tr-shadow">
                         
                         <td style="color: black"> 
@@ -80,18 +79,13 @@
                                 </a>
                             </div>
                         </td>
-                        
                     </tr>
-                    <tr class="spacer"></tr>
-                   
-                
-                  @endforeach 
-                   
-                            
+                    
+                  @endforeach                   
                 </tbody>
             </table>
         </div>
         <!-- END DATA TABLE -->
-</div>
+    </div>
 </div>
 @endsection

@@ -19,8 +19,21 @@ class company extends Model
         return $this->hasMany('App\satpam');
     }
 
-    public function package()
+    public function paket()
     {
-        return $this->hasOne('App\package','id_package','id');
+        return $this->belongsTo('App\package','id_paket');
+    }
+    
+    public function accident()
+    {
+    	return $this->hasMany('App\accident','id_outsourcing','id');
+    }
+    public function vehicle()
+    {
+    	return $this->hasMany('App\vehicle','id_outsourcing','id');
+    }
+    public function guest()
+    {
+    	return $this->hasMany('App\guest','id_outsourcing','id');
     }
 }

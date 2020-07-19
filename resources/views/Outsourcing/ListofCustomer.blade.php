@@ -25,27 +25,27 @@
         </div>
         <!-- DATA TABLE-->
         <div class="table-responsive m-b-40">
-            <table class="table table-borderless table-data3">
+            <table class="table table-borderless table-data3" id="dataTable">
                 <thead>
                     <tr>
                         <th>Nama Perusahaan</th>
                         <th>Kota</th>
                         <th>Alamat</th>
-                        <th>Jumlah Client</th>
+                        <th>Batas Satpam</th>
                         <th>Jenis paket</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ($List as $p)
+                    @foreach ($company as $p)
 
                     <tr>
                         <td>{{ $p-> Name }}</td>
                         <td>{{ $p-> City }}</td>
                         <td>{{ $p-> Address}}</td>
-                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $p-> Client_count }}</span></td>
-                        <td>{{ $p-> Satpam_count }}</td>
+                        <td><span class="role cabang" style="text-align:center; line-height:1.5;">{{ $p->paket->Security_Count}}</span></td>
+                        <td>{{ $p->paket->package_name }}</td>
                         <td>
                             <div class="table-data-feature">
                                 <a href="/Outsourcing/Edit/{{ $p->id }}">

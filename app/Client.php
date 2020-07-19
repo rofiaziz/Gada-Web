@@ -34,5 +34,8 @@ class Client extends Model
     {
     	return $this->belongsTo('App\User','client_id','id');
     }
-
+    public function guest()
+    {
+    	return $this->hasOne('App\guest');
+    }
 }

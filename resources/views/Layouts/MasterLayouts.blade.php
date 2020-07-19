@@ -2,6 +2,8 @@
 <html lang="{{ app()->getLocale() }}">>
 
 <head>
+
+    
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,8 +38,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Datatable -->
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"> --}}
     
-
+    <link href="{{URL::asset('css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" media="all">
+    
+    
     
     
    
@@ -259,7 +265,7 @@
                                     </ul>
                             </li>
                         @endif
-                        {{-- @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'client'))
+                        @if ((auth()->user()->role == 'admin') || (auth()->user()->role == 'client') || (auth()->user()->role == 'outsourcing'))
                                
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
@@ -268,7 +274,7 @@
                                     <li><?php
                                         $parameter= Crypt::encrypt(Auth::user()->id);
                                     ?>
-                                        <a href="{{ route('daftarlaporan',$parameter)}}">Laporan Kejadian</a>
+                                        <a href="{{ route('daftarkejadian',$parameter)}}">Laporan Kejadian</a>
                                     </li>
                                     <li><?php
                                         $parameter= Crypt::encrypt(Auth::user()->id);
@@ -282,7 +288,7 @@
                                     </li>
                                 </ul>
                         </li>
-                    @endif --}}
+                    @endif
                     
                         <li class="has-sub">
                             <a class="js-arrow" href="{{ url('/Message/Inbox')}}">
@@ -305,10 +311,10 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                {{-- <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
-                                </button>
+                                </button> --}}
                             </form>
                             <div class="header-button">
                                 {{-- <div class="noti-wrap">
@@ -505,13 +511,18 @@
     <!-- Main JS-->
     <script src="{{URL::asset('js/main.js')}}"></script>
     <script src="{{URL::asset('js/app.js')}}"></script>
-    
+
+    {{-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script> --}}
+       <script src="{{URL::asset('js/jquery.dataTables.min.js')}}"></script>
+       <script src="{{URL::asset('js/dataTables.bootstrap4.min.js')}}"></script>
+       <script src="{{URL::asset('js/datatables-demo.js')}}"></script>
+
     <script type="text/javascript">
    $(document).ready(function () {
     $('a[href="' + this.location.pathname + '"]').parents().addClass('active');
     });
     </script>
-
+@yield('footer')
 </body>
 
 </html>

@@ -25,14 +25,14 @@
         </div>
         <!-- DATA TABLE-->
         <div class="table-responsive m-b-40">
-            <table class="table table-borderless table-data3">
+            <table class="table table-borderless table-data3" id="dataTable">
                 <thead>
                     <tr>
                         <th>Nama Klien</th>
                         <th>Lokasi</th>
                         <th>Berlangganan sampai</th>
                         {{-- <th>Jumlah Client</th> --}}
-                        <th>Satpam Aktif</th>
+                        {{-- <th>Satpam Aktif</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
                         <td>{{ $p->Client->location }}</td>
                         <td>{{ $p->Client->valid_since}}</td>
                         {{-- <td><span class="role cabang" style="text-align:center; line-height:1.5;">p-> jumlah_client }}</span></td> --}}
-                        <td>{{ $p->Client->security_active }}</td>
+                        {{-- <td>{{ $p->Client->security_active }}</td> --}}
                     </tr>
                    
                     @endforeach                   

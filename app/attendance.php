@@ -16,7 +16,11 @@ class attendance extends Model
 
     public function client()
     {
-    	return $this->belongsTo('App\Client');
+    	return $this->belongsTo('App\Client','client_id');
+    }
+    public function company()
+    {
+    	return $this->belongsTo('App\company','outsourcing_id');
     }
     public function schedule()
     {

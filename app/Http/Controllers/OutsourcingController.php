@@ -4,7 +4,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
- 
+use App\company;
+use App\package;
 
 
 
@@ -20,11 +21,9 @@ class OutsourcingController extends Controller
 
     
     public function index(){
-        $List=DB::table('company')
-        ->select('id','Name','City','Address','Client_count','Satpam_count')
-        ->get();
-
-        return view('/Outsourcing/ListofCustomer',compact(['List']));
+        $company=array();
+        $company=company::all();
+        return view('/Outsourcing/ListofCustomer',['company'=>$company]);
     }
 
     public function add(){

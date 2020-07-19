@@ -98,22 +98,22 @@ class SatpamController extends Controller
 
         if ($nitip->role =='admin') {
            
-            $satpam = satpam::all();
+            $attendance = attendance::all();
 
-            return view('/Satpam/Attendance',['satpam' => $satpam] );
+            return view('/Satpam/Attendance',['attendance' => $attendance] );
            
         }
         elseif($nitip->role  == 'outsourcing'){
-            $satpam = satpam::where(array('outsourcing_id' =>$nitip->company_id, 'acc_state' => '1'))
+            $attendance = attendance::where(array('outsourcing_id' =>$nitip->company_id))
             ->get();
            
-            return view('/Satpam/Attendance',['satpam' => $satpam] );
+            return view('/Satpam/Attendance',['attendance' => $attendance] );
 
         }elseif($nitip->role == 'client'){
             
-            $satpam = satpam::where(array('client_id' =>$nitip->client_id, 'acc_state' => '1'))
+            $attendance = attendance::where(array('client_id' =>$nitip->client_id))
             ->get();
-            return view('/Satpam/Attendance',['satpam' => $satpam] );
+            return view('/Satpam/Attendance',['attendance' => $attendance] );
         }
         
         
