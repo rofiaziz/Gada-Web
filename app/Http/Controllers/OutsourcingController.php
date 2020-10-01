@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\company;
 use App\package;
-
+use App\User;
 
 
 class OutsourcingController extends Controller

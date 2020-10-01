@@ -102,7 +102,22 @@
                                     @endif
                               </div>
                             </div>
-                            
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="client">Pilih Klien</label>
+                                <select name="client" required class="form-control">
+                                  <option value="">Pilih Klien</option>
+                                  @foreach($client as $s)
+                                      <option value="{{ $s->client_id}}">
+                                          {{ $s->name }}
+                                      </option>
+                                  @endforeach
+                                </select>
+                                  
+                              </div>
+                            </div>
+
                           </div>
                         <div class="row">
                             <div class="update ml-auto mr-auto">

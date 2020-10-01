@@ -13,7 +13,7 @@ class accident extends Model
 
     public function satpam()
     {
-    	return $this->belongsTo('App\satpam','satpam_id');
+    	return $this->belongsTo('App\satpam','id_satpam');
     }
 
     public function client()
@@ -22,6 +22,6 @@ class accident extends Model
     }
     public function company()
     {
-    	return $this->belongsTo('App\Client','id_outsourcing','id');
+    	return $this->belongsTo('App\company','id_outsourcing','id');
     }
 }

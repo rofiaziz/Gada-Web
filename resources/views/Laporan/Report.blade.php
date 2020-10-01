@@ -32,7 +32,7 @@
                 <div class="tab-pane fade in active show" id="kejadian" name="about" role="tabpanel">
                     
                     <div class="table-responsive table-responsive-data2" >
-                        <table class="table table-data2">
+                        <table class="table table-data2" id="dataTable">
                         
                             <thead>
                                 <tr>
@@ -46,24 +46,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($satpam as $s)
+                                @foreach ($accident as $s)
                                 <tr class="tr-shadow">
                                     
-                                    <td style="color: black"> {{$s ->profils['Name']}}</td>
+                                    <td style="color: black"> {{$s ->satpam->profils['Name']}}</td>
                                     <td style="color: black">
                                         <span >{{ $s -> client->name }}</span>
                                     </td>
-                                    @foreach ($s ->accident as $item)
+                                   
                                     <td style="color: black">
-                                        {{ $item['Incident'] }}
+                                        {{ $s['Incident'] }}
                                     </td>
-                                    <td style="color: black"> {{ $item['Tindak_lanjut'] }} </td>
-                                    <td style="color: black"> <textarea name="catatan" id="" >{{ $item['note']}}</textarea></td>
+                                    <td style="color: black"> {{ $s['Tindak_lanjut'] }} </td>
+                                    <td style="color: black"> <textarea name="catatan" id="" >{{ $s['note']}}</textarea></td>
                                     <td style="color: black"><a href="/cetak/accident/{{ $s->id}}" class="btn btn-primary" target="_blank">CETAK PDF</a></td>
                                     
-                                    @endforeach
+                                   
                                 </tr>
-                                <tr class="spacer"></tr>
+                                
                               @endforeach               
                             </tbody>
                         </table>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="tab-pane fade" id="kendaraan" role="tabpanel">
                     <div class="table-responsive table-responsive-data2">
-                        <table class="table table-data2" >
+                        <table class="table table-data2" id="dataTable">
                            
                             <thead>
                                 <tr>
@@ -89,25 +89,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($satpam as $s)
+                                @foreach ($vehicle as $s)
                                 <tr class="tr-shadow">
                                     
-                                    <td style="color: black"> {{$s ->profils['Name']}}</td>
+                                    <td style="color: black"> {{$s ->satpam->profils['Name']}}</td>
                                     <td style="color: black">
                                         <span >{{ $s -> client->name }}</span>
                                     </td>
-                                    @foreach ($s ->vehicle as $item)
+                                   
                                     <td style="color: black">
-                                        {{ $item['Date'] }}
+                                        {{ $s['Date'] }}
                                     </td>
-                                    <td style="color: black"> {{ $item['Time_in'] }} </td>
-                                    <td style="color: black"> {{ $item['Time_out'] }}</td>
-                                    <td style="color: black"> {{ $item['Driver_name']}}</td>
-                                    <td style="color: black"> {{ $item['vehicle_num']}}</td>
-                                    <td style="color: black"> <textarea name="catatan" id="" >{{ $item['note']}}</textarea> </td>
-                                    @endforeach
+                                    <td style="color: black"> {{ $s['Time_in'] }} </td>
+                                    <td style="color: black"> {{ $s['Time_out'] }}</td>
+                                    <td style="color: black"> {{ $s['Driver_name']}}</td>
+                                    <td style="color: black"> {{ $s['vehicle_num']}}</td>
+                                    <td style="color: black"> <textarea name="catatan" id="" >{{ $s['note']}}</textarea> </td>
+                                   
                                 </tr>
-                                <tr class="spacer"></tr>
                               @endforeach                   
                             </tbody>
                         </table>
@@ -117,7 +116,7 @@
                 <div class="tab-pane fade" id="tamu" role="tabpanel">
                     
                     <div class="table-responsive table-responsive-data2">
-                        <table class="table table-data2">
+                        <table class="table table-data2" id="dataTable">
                            
                             <thead>
                                 <tr>
@@ -125,33 +124,35 @@
                                     <th>Nama Satpam</th>
                                     <th>Kantor</th>
                                     <th>Alamat</th>
-                                    <th>No Telp.</th>
-                                    <th>Keperluan</th>
                                     <th>Perusahaan Tamu</th>
                                     <th>Unduh</th>
                                     
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($satpam as $s)
+                                @foreach ($guest as $s)
                                 <tr class="tr-shadow">
                                     
-                                    <td style="color: black"> {{$s ->profils['Name']}}</td>
+                                    <td style="color: black"> {{$s ->satpam->profils['Name']}}</td>
                                     <td style="color: black">
-                                        <span >{{ $s -> client->name }}</span>
+                                        <span >{{ $s ->satpam-> client->name }}</span>
                                     </td>
-                                    @foreach ($s ->guest as $item)
+                                    
                                     <td style="color: black">
-                                        <span >{{ $item['address']}}</span>
+                                        
+                                        <span >{{ $s->address}}</span>
+                                        
                                     </td>
-                                    <td style="color: black"> {{ $item['phone_num']}}</td>
-                                    <td style="color: black"> {{ $item['requirement']}}</td>
-                                    <td style="color: black"> {{ $item['company']}}</td>
+                                    <td style="color: black">{{ $s->company}}</td>
+                                    
                                     {{-- <td> <img src="file_attachment/fetch_image{{ $item['id'] }}" width="75"></td> --}}
-                                    <td style="color: black"><a href="/cetak/guest/{{ $s->id}}" class="btn btn-primary" target="_blank">CETAK PDF</a></td>
-                                    @endforeach
+                                    <td style="color: black">
+                                        <a href="/cetak/guest/{{ $s->id_guest }}" class="btn btn-primary" target="_blank">PDF</a>
+                                        
+                                    </td>
+                                    
                                 </tr>
-                                <tr class="spacer"></tr>
+                                
                               @endforeach                   
                             </tbody>
                         </table>

@@ -53,13 +53,11 @@
                         </td>
                         <td>
                             <div class="table-data-feature">
-                                
+                                <a href="/Satpam/DeploymentSatpam/edit/{{ $s->id }}">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
+                                
                                 
                             </div>
                         </td>

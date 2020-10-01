@@ -31,7 +31,7 @@
                             @foreach ($company as $item)
                                 
                             
-                            <i style="color: rgba(0, 0, 0, 0.719)"><b>Batas Maksimal Satpam : {{$item->package->Security_Count}}</b></i>
+                            <i style="color: rgba(0, 0, 0, 0.719)"><b>Batas Maksimal Satpam : {{$item->paket->Security_Count}}</b></i>
                             @endforeach
                     </div>
                 </div>

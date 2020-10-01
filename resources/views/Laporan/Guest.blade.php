@@ -48,7 +48,7 @@
                                     {{-- <td> <img src="file_attachment/fetch_image{{ $item['id'] }}" width="75"></td> --}}
                                     <td style="color: black">
                                         <a href="/cetak/guest/{{ $s->id_guest }}" class="btn btn-primary" target="_blank">PDF</a>
-                                        <a href="/cetak/guest/{{ $s->id_guest }}" class="btn btn-info" target="_blank">Detail</a>
+                                        
                                     </td>
                                     
                                 </tr>

@@ -225,6 +225,11 @@
                                             ?>
                                                 <a href="{{ route('deploy',$parameter)}}">Deployment</a>
                                             </li>
+                                            <li><?php
+                                                $parameter= Crypt::encrypt(Auth::user()->id);
+                                            ?>
+                                                <a href="{{ route('daftarcuti',$parameter)}}">Permintaan Cuti</a>
+                                            </li>
                                         @endif
 
                                         <li><?php
@@ -242,6 +247,7 @@
                                         ?>
                                             <a href="{{ route('schedule',$parameter)}}">Jadwal Kehadiran</a>
                                         </li>
+                                        
                                     </ul>
                             </li>
                             @endif
@@ -256,9 +262,14 @@
                                         ?>
                                             <a href="{{ route('listclient',$parameter)}}">Daftar Klien</a>
                                         </li>
+
+                                        @if ((auth()->user()->role == 'outsourcing'))
+                                            
+                                        
                                         <li>
                                             <a href="{{ route('addclient')}}">Tambah Klien</a>
                                         </li>
+                                        @endif
                                         {{-- <li>
                                             <a href="{{ url('/RequestfromClient')}}">Request Deploy Satpam</a>
                                         </li> --}}

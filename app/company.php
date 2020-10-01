@@ -36,4 +36,8 @@ class company extends Model
     {
     	return $this->hasMany('App\guest','id_outsourcing','id');
     }
+    public function cuti()
+    {
+    	return $this->hasMany('App\cuti','outsourcing_id','id');
+    }
 }

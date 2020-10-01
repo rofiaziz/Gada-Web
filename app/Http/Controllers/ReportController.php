@@ -11,6 +11,7 @@ use App\vehicle;
 use App\accident;
 use App\User;
 use App\guest;
+use App\cuti;
 use PDF;
 
 
@@ -25,14 +26,16 @@ class ReportController extends Controller
     //requst data satpam
     public function laporan($id){
     
-    $satpam=array();
-    
-        $satpam = satpam::where(array('id' =>$id))
+        $accident = accident::where('id_satpam' , $id)
+        ->get();
+            
+        $guest = guest::where('id_satpam' , $id)
         ->get();
 
-       
-
-        return view('/Laporan/Report',['satpam' => $satpam]);
+        $vehicle = vehicle::where('id_satpam' , $id)
+        ->get();
+        
+        return view('/Laporan/Report',['guest'=>$guest,'accident'=> $accident,'vehicle'=>$vehicle]);
    
     }   
 
@@ -134,4 +137,14 @@ class ReportController extends Controller
             return view ('/Laporan/Vehicle',['vehicle'=>$vehicle]);
         }
     }
+
+
+
+    
+
+
+
+
+
+
 }

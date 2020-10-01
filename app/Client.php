@@ -38,4 +38,8 @@ class Client extends Model
     {
     	return $this->hasOne('App\guest');
     }
+    public function cuti()
+    {
+        return $this->hasMany('App\cuti','client_id','id');
+    }
 }

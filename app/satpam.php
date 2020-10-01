@@ -8,11 +8,9 @@ class satpam extends Model
 {
     protected $primaryKey = 'id';
     protected $table = "satpam";
+    protected $filable = ['outsourcing_id','client_id','email','password','acc_state'];
 
-    public function cuti()
-    {
-    	return $this->hasMany('App\cuti');
-    }
+    
 
     public function rating()
     {
@@ -52,5 +50,9 @@ class satpam extends Model
     public function guest()
     {
     	return $this->hasMany('App\guest','id_satpam','id');
+    }
+    public function cuti()
+    {
+    	return $this->hasMany('App\cuti','satpam_id','id');
     }
 }

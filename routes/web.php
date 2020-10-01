@@ -63,9 +63,15 @@ Route::get('/Satpam/ListofSatpam/{role}','SatpamController@index')->name('listsa
 Route::get('/Satpam/RequestSatpam/{role}','SatpamController@request')->name('request')->middleware(['user']);
 Route::get('/Satpam/RequestSatpam/edit/{id}','SatpamController@editreq');
 Route::get('/Satpam/RequestSatpam/delete/{id}','SatpamController@deletereq');
+Route::get('/AddSatpam',function(){
+        return view('Satpam/AddSatpam');});
+Route::get('/Satpam/store','SatpamController@add');
+
 
 Route::get('/Satpam/attendance/{role}', 'SatpamController@attendance')->name('attendance')->middleware(['user']);
 Route::get('/Satpam/DeploymentSatpam/{role}', 'SatpamController@deploy')->name('deploy')->middleware(['user']);
+Route::get('/Satpam/DeploymentSatpam/edit/{id}', 'SatpamController@editdeploy');
+Route::post('/Satpam/DeploymentSatpam/update/{id}','SatpamController@updatedeploy');
 
 Route::get('/Satpam/schedule/{role}','SatpamController@schedule')->name('schedule')->middleware(['user']);
 Route::get('/Satpam/Addschedule','SatpamController@addschedule');
@@ -81,6 +87,11 @@ Route::get('/cetak/guest/{id}','ReportController@guest');
 Route::get('/Report/accident/{role}', 'ReportController@accidentall')->name('daftarkejadian')->middleware(['user']);
 Route::get('/Report/guest/{role}', 'ReportController@guestall')->name('daftartamu')->middleware(['user']);
 Route::get('/Report/vehicle/{role}', 'ReportController@vehicleall')->name('daftarkendaraan')->middleware(['user']);
+
+
+
+
+
 //Message
 
 Route::get('/contacts', 'ContactsController@get');
@@ -91,6 +102,8 @@ Route::post('/conversation/send', 'ContactsController@send');
 Route::get('/Message/Inbox', function(){
     return view('Message/Inbox');
 });
+
+
 
 
 // paket
@@ -107,9 +120,6 @@ Route::group(['middleware' => ['CheckRole:admin']], function () {
 });
 
 
-
-
-
 Route::get('/Forgot-passwd',function(){
     return view('Login-Register/Forgot-Password');
 });
@@ -120,7 +130,26 @@ Route::group(['middleware' => ['CheckRole:admin,outsourcing,client']], function 
     
     Route::get('/Laporan/{id}', 'ReportController@laporan')->name('daftarlaporan')->middleware(['user']);
    
+
+    Route::get('/Cuti/{role}', 'SatpamController@cuti')->name('daftarcuti')->middleware(['user']);
+   
+    // Route::get('/Cuti',function(){
+    //     return view('Cuti/RequestCuti');
+    // });
+
 });
+
+
+
+// Cuti Tools
+Route::get('/Cuti/Acc/{id}','SatpamController@acccuti');
+Route::get('/Cuti/Dec/{id}','SatpamController@deccuti');
+Route::get('/Cuti/lebih/{id}','SatpamController@detcuti');
+
+
+
+
+
 
 
 
